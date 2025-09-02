@@ -107,8 +107,8 @@ namespace _Scripts.Player
 
         private void HandleGravity()
         {
-            if (characterController.isGrounded && velocity.y < 0)
-               velocity.y = groundedGravity * Time.deltaTime;
+            if (characterController.isGrounded)
+                velocity.y = (velocity.y < 0) ? groundedGravity * Time.deltaTime : -0.1f;
             else
                 velocity.y += playerGravity * Time.deltaTime;
         }

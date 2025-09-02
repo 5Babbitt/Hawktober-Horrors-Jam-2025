@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -9,9 +9,13 @@ namespace _Scripts.Player
         private CinemachineCamera cineCam;
         private CinemachineFollow camFollow;
 
-        [Header("Player Camera Settings")]
+        [Header("Crouch Camera Settings")]
         [SerializeField] private float standHeight = 0.75f;
         [SerializeField] private float crouchHeight = 0.5f;
+        [SerializeField] private float crouchTime = 0.5f;
+        [SerializeField] private AnimationCurve crouchTransitionCurve;
+
+        private Coroutine crouchCoroutine;
 
         protected override void Awake()
         {
@@ -38,7 +42,34 @@ namespace _Scripts.Player
 
         private void OnCrouch(bool isCrouching)
         {
-            camFollow.FollowOffset.y = isCrouching ? crouchHeight : standHeight;
+            if (crouchCoroutine != null)
+            {
+                StopCoroutine(crouchCoroutine);
+            }
+            
+            float targetHeight = isCrouching ? crouchHeight : standHeight;
+            crouchCoroutine = StartCoroutine(CrouchTransition(targetHeight));
+        }
+
+        private IEnumerator CrouchTransition(float targetHeight)
+        {
+            float startHeight = camFollow.FollowOffset.y;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < crouchTime)
+            {
+                elapsedTime += Time.deltaTime;
+                float progress = elapsedTime / crouchTime;
+
+                progress = crouchTransitionCurve.Evaluate(progress);
+
+                camFollow.FollowOffset.y = Mathf.Lerp(startHeight, targetHeight, progress);
+
+                yield return null;
+            }
+
+            camFollow.FollowOffset.y = targetHeight;
+            crouchCoroutine = null;
         }
 
         private void OnValidate()
