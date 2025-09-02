@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : PlayerFeature
     {
-        private CharacterController controller;
+        private CharacterController characterController;
         private Camera cam;
 
         [Header("Move Settings")]
@@ -34,9 +34,11 @@ namespace _Scripts.Player
         public InputActionReference runAction;
         public InputActionReference lookAction;
 
-        private void Awake()
+        protected override void Awake()
         {
-            controller = GetComponent<CharacterController>();
+            base.Awake();
+            
+            characterController = GetComponent<CharacterController>();
             cam = Camera.main;
         }
 
@@ -71,7 +73,7 @@ namespace _Scripts.Player
             HandleMovement();
             HandleGravity();
             
-            controller.Move(velocity * Time.deltaTime);
+            characterController.Move(velocity * Time.deltaTime);
         }
 
         private void HandleRotation()
@@ -89,7 +91,7 @@ namespace _Scripts.Player
         
         private void HandleMovement()
         {
-            if (isMoving && controller.isGrounded)
+            if (isMoving && characterController.isGrounded)
             {
                 if (isCrouching) HandleCrouching();
                 else HandleStanding();
@@ -105,7 +107,7 @@ namespace _Scripts.Player
 
         private void HandleGravity()
         {
-            if (controller.isGrounded && velocity.y < 0)
+            if (characterController.isGrounded && velocity.y < 0)
                velocity.y = groundedGravity * Time.deltaTime;
             else
                 velocity.y += playerGravity * Time.deltaTime;
@@ -129,7 +131,11 @@ namespace _Scripts.Player
 
         private void OnCrouch(InputAction.CallbackContext context)
         {
-            isCrouching = context.ReadValueAsButton();
+            bool newCrouchValue = context.ReadValueAsButton();
+            if (newCrouchValue == isCrouching) return;
+            
+            isCrouching = newCrouchValue;
+            Controller.OnCrouch.Invoke(isCrouching);
         }
 
         private void OnRun(InputAction.CallbackContext context)
@@ -139,8 +145,7 @@ namespace _Scripts.Player
 
         private void OnLook(InputAction.CallbackContext context)
         {
-            if (context.performed)
-                HandleRotation();
+            HandleRotation();
         }
     }
 }
