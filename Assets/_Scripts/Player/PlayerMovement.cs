@@ -99,7 +99,7 @@ namespace _Scripts.Player
 
             Vector3 lateral = Vector3.ProjectOnPlane(transform.right, Vector3.up); // left/right
             Vector3 longitudinal = Vector3.ProjectOnPlane(transform.forward, Vector3.up); // forward/backward
-            Vector3 direction = (moveInput.x * lateral.normalized) + (moveInput.y * longitudinal.normalized);
+            Vector3 direction = Vector3.ClampMagnitude((moveInput.x * lateral.normalized) + (moveInput.y * longitudinal.normalized), 1f);
             
             velocity.x = direction.x * moveSpeed;
             velocity.z = direction.z * moveSpeed;
