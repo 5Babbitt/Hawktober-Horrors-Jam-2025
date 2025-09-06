@@ -1,27 +1,27 @@
+using _Scripts.SOAP.EventSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.InteractionSystem
 {
-    public abstract class InteractableBehaviour : MonoBehaviour, IInteractable
+    public class InteractableBehaviour : MonoBehaviour, IInteractable
     {
-        public virtual void OnFocus()
+        public GameEvent onInteractEvent;
+        
+        public void OnFocus()
         {
             Debug.Log($"Looking at {name}");
         }
 
-        public virtual void OnLostFocus()
+        public void OnLostFocus()
         {
-            
+            Debug.Log($"Lost focus of {name}");
         }
 
-        public virtual void OnInteract()
+        public void OnInteract()
         {
             Debug.Log($"Interacted with {name}");
+            onInteractEvent.Raise();
         }
-    }
-
-    public class InteractableCube : InteractableBehaviour
-    {
-        
     }
 }
