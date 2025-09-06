@@ -1,4 +1,5 @@
 using System;
+using _Scripts.SOAP.Variables;
 using _Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,9 +17,7 @@ namespace _Scripts.Player
         [SerializeField] private float runSpeed = 6f;
         [SerializeField] private float playerGravity = Physics.gravity.y;
         [SerializeField] private float groundedGravity = -5f;
-
-        [Header("Rotation Settings")] 
-        [SerializeField] private float rotationDamping;
+        [SerializeField] private Vector3Variable playerPos;
 
         [Header("Debug Values")]
         [SerializeField] private bool isMoving;
@@ -74,6 +73,7 @@ namespace _Scripts.Player
             HandleGravity();
             
             characterController.Move(velocity * Time.deltaTime);
+            playerPos.Value = transform.position;
         }
 
         private void HandleRotation()
@@ -136,10 +136,14 @@ namespace _Scripts.Player
             
             isCrouching = newCrouchValue;
             Controller.OnCrouch.Invoke(isCrouching);
+            
+            isRunning = false;
         }
 
         private void OnRun(InputAction.CallbackContext context)
         {
+            if (isCrouching) return;
+            
             isRunning = context.ReadValueAsButton();
         }
 
