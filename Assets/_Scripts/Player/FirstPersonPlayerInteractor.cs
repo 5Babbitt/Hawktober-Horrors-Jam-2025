@@ -1,4 +1,3 @@
-using System;
 using _Scripts.InteractionSystem;
 using _Scripts.Utils;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.Player
 {
-    public class FirstPersonPlayerInteractor : PlayerFeature
+    public class FirstPersonPlayerInteractor : MonoBehaviour
     {
         private Camera cam;
 
@@ -14,17 +13,14 @@ namespace _Scripts.Player
         [SerializeField] private bool interactPressed;
         [SerializeField] private float maxInteractDistance;
         [SerializeField] private LayerMask interactableLayers;
-        [SerializeField] private string focusMessage;
         
         private IInteractable currentInteractable;
-            
+        
         [Header("Input Actions")] 
         public InputActionReference interactAction;
 
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
-            
             cam = Camera.main;
         }
 
