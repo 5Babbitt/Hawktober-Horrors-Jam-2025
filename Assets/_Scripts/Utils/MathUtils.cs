@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Utils
@@ -64,35 +65,23 @@ namespace _Scripts.Utils
         /// Invert a Vector3 along the desired axis/axes
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="axis"></param>
-        /// <returns></returns>
-        public static Vector3 InvertVector3(Vector3 input, InvertAxis axis)
+        /// <param name="axes"></param>
+        /// <returns>A Vector inverted along the desired axes</returns>
+        public static Vector3 InvertVector(Vector3 input, AxisToInvert axes)
         {
             var invertVector = Vector3.one;
 
-            switch (axis)
+            if (axes.HasFlag(AxisToInvert.X))
             {
-                case InvertAxis.x:
-                    invertVector.x = -1;
-                    break;
-                case InvertAxis.y:
-                    invertVector.y = -1;
-                    break;
-                case InvertAxis.z:
-                    invertVector.z = -1;
-                    break;
-                case InvertAxis.xy:
-                    invertVector.x = -1;
-                    invertVector.y = -1;
-                    break;
-                case InvertAxis.xz:
-                    invertVector.x = -1;
-                    invertVector.z = -1;
-                    break;
-                case InvertAxis.yz:
-                    invertVector.y = -1;
-                    invertVector.z = -1;
-                    break;
+                invertVector.x = -1;
+            }
+            if (axes.HasFlag(AxisToInvert.Y))
+            {
+                invertVector.y = -1;
+            }
+            if (axes.HasFlag(AxisToInvert.Z))
+            {
+                invertVector.z = -1;
             }
 
             var output = Vector3.Scale(input, invertVector);
@@ -102,23 +91,22 @@ namespace _Scripts.Utils
 
 
         /// <summary>
-        /// Invert a Vector2 along the desired axis
+        /// Invert a Vector2 along the desired axes
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="axis"></param>
-        /// <returns></returns>
-        public static Vector2 InvertVector2(Vector2 input, InvertAxis axis)
+        /// <param name="axes"></param>
+        /// <returns>A Vector inverted along the desired axes</returns>
+        public static Vector2 InvertVector(Vector2 input, AxisToInvert axes)
         {
             var invertVector = Vector2.one;
 
-            switch (axis)
+            if (axes.HasFlag(AxisToInvert.X))
             {
-                case InvertAxis.x:
-                    invertVector.x = -1;
-                    break;
-                case InvertAxis.y:
-                    invertVector.y = -1;
-                    break;
+                invertVector.x = -1;
+            }
+            if (axes.HasFlag(AxisToInvert.Y))
+            {
+                invertVector.y = -1;
             }
 
             var output = Vector2.Scale(input, invertVector);
@@ -180,14 +168,13 @@ namespace _Scripts.Utils
         }
     }
 
-    public enum InvertAxis
+    [System.Flags]
+    public enum AxisToInvert
     { 
-        x,
-        y,
-        z,
-        xy,
-        xz,
-        yz
+        X = 0,
+        Y = 1,
+        Z = 2,
+        All = X | Y | Z
     }
 }
 
