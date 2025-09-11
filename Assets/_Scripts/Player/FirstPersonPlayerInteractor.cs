@@ -56,7 +56,7 @@ namespace _Scripts.Player
         private void OnInteract(InputAction.CallbackContext context)
         {
             interactPressed = context.ReadValueAsButton();
-            if (canInteract && interactPressed) currentInteractable?.OnInteract();
+            if (canInteract && interactPressed) currentInteractable?.OnInteract(null);
         }
 
         private void OnDrawGizmosSelected()

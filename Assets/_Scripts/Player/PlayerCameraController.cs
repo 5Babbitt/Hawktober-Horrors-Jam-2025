@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using _Scripts.SOAP.EventSystem.Events;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -6,8 +8,12 @@ namespace _Scripts.Player
 {
     public class PlayerCameraController : PlayerFeature
     {
+        private const string LookX = "Look X (Pan)";
+        private const string LookY = "Look Y (Tilt)";
+        
         private CinemachineCamera cineCam;
         private CinemachineFollow camFollow;
+        private CinemachineInputAxisController camInput;
 
         [Header("Crouch Camera Settings")]
         [SerializeField] private float standHeight = 0.75f;
@@ -23,6 +29,7 @@ namespace _Scripts.Player
 
             cineCam = GetComponentInChildren<CinemachineCamera>();
             camFollow = cineCam.gameObject.GetComponent<CinemachineFollow>();
+            camInput = cineCam.gameObject.GetComponent<CinemachineInputAxisController>();
         }
 
         private void OnEnable()
@@ -49,6 +56,20 @@ namespace _Scripts.Player
             
             float targetHeight = isCrouching ? crouchHeight : standHeight;
             crouchCoroutine = StartCoroutine(CrouchTransition(targetHeight));
+        }
+
+        public void SetCameraFreelook(bool canLook)
+        {
+            SetCameraInputEnabled(canLook);
+        }
+
+        private void SetCameraInputEnabled(bool isEnabled, string axisName = "")
+        {
+            foreach (var inputAxis in camInput.Controllers)
+            {
+                if (string.IsNullOrEmpty(axisName) || inputAxis.Name == axisName)
+                    inputAxis.Enabled = isEnabled;
+            }
         }
 
         private IEnumerator CrouchTransition(float targetHeight)
