@@ -3,12 +3,13 @@ using _Scripts.SOAP.EventSystem.Events;
 using _Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using _Scripts.Doors;
 
 namespace _Scripts.Player
 {
     public class PlayerDoorInteractor : MonoBehaviour
     {
-        private const float reachCheckTime = 0.2f;
+        private const float ReachCheckTime = 0.2f;
         
         private Camera cam;
         [SerializeField] private float reach;
@@ -18,9 +19,8 @@ namespace _Scripts.Player
 
         [Space(20)] 
         [SerializeField] private Vector2 mouseDelta;
-        [SerializeField] private Rigidbody selectedDoor;
+        [SerializeField] private SwingDoor selectedDoor;
         
-        private HingeJoint doorJoint;
         private float doorSpeed;
         private Coroutine doorInReachCoroutine;
     
@@ -69,21 +69,15 @@ namespace _Scripts.Player
             if (!selectedDoor) return;
             ApplyForceToDoor(doorSpeed);
         }
-
-        private void ApplyForceToDoor(float speedAdd)
-        {
-            // Apply torque to the door around the hinge axis
-            Vector3 hingeAxis = doorJoint.transform.TransformDirection(doorJoint.axis);
-            selectedDoor.AddTorque(hingeAxis * (speedAdd * forceMultiplier * Time.fixedDeltaTime));
-        }
-
+        
         private float GetSpeedAdd()
         {
             // Get the world position of the rigidbody's center of mass
-            Vector3 bodyCenter = selectedDoor.worldCenterOfMass;
+            Vector3 bodyCenter = selectedDoor.Rb.worldCenterOfMass;
 
-            // Get the hinge joint's anchor point in world space
-            Vector3 hingeWorldPos = doorJoint.transform.TransformPoint(doorJoint.anchor);
+            // Get the hinge joint's axis and anchor point in world space
+            Vector3 hingeWorldPos = selectedDoor.Hinge.transform.TransformPoint(selectedDoor.Hinge.anchor);
+            Vector3 hingeAxis = selectedDoor.Hinge.transform.TransformDirection(selectedDoor.Hinge.axis);
 
             // Calculate normalized vector from joint to body center
             Vector3 jointToBody = (bodyCenter - hingeWorldPos).normalized;
@@ -94,13 +88,17 @@ namespace _Scripts.Player
             // Calculate the rotation direction using cross product
             Vector3 pushRotateDir = Vector3.Cross(jointToBody, pushAmount);
 
-            // Get the hinge joint's axis in world space
-            Vector3 hingeAxis = doorJoint.transform.TransformDirection(doorJoint.axis);
-
             // Calculate how much the push aligns with the hinge axis
             float speedAdd = Vector3.Dot(pushRotateDir, hingeAxis);
 
             return speedAdd;
+        }
+
+        private void ApplyForceToDoor(float speedAdd)
+        {
+            // Apply torque to the door around the hinge axis
+            Vector3 hingeAxis = selectedDoor.Hinge.transform.TransformDirection(selectedDoor.Hinge.axis);
+            selectedDoor.Rb.AddTorque(hingeAxis * (speedAdd * forceMultiplier * Time.fixedDeltaTime));
         }
 
         private bool CastForDoor(out RaycastHit hit)
@@ -117,7 +115,7 @@ namespace _Scripts.Player
                 case true when !selectedDoor && CastForDoor(out RaycastHit hit):
                     GetSelectedDoor(hit);
                     break;
-                case false when selectedDoor:
+                case false when selectedDoor != null:
                     ClearSelectedDoor();
                     break;
             }
@@ -125,8 +123,7 @@ namespace _Scripts.Player
 
         private void GetSelectedDoor(RaycastHit hit)
         {
-            selectedDoor = hit.rigidbody;
-            doorJoint = selectedDoor.GetComponent<HingeJoint>();
+            selectedDoor = hit.transform.GetComponent<SwingDoor>();
             enableCameraLook.Raise(false);
             doorInReachCoroutine = StartCoroutine(CheckDoorInReach());
         }
@@ -134,7 +131,6 @@ namespace _Scripts.Player
         private void ClearSelectedDoor()
         {
             selectedDoor = null;
-            doorJoint = null;
             enableCameraLook.Raise(true);
             if (doorInReachCoroutine != null)
             {
@@ -156,7 +152,7 @@ namespace _Scripts.Player
                     ClearSelectedDoor();
                 }
 
-                yield return new WaitForSeconds(reachCheckTime);
+                yield return new WaitForSeconds(ReachCheckTime);
             }
             
         }

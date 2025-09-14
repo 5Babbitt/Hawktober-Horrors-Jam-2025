@@ -4,6 +4,6 @@ namespace _Scripts.InteractionSystem
     {
         public void OnFocus();
         public void OnLostFocus();
-        public void OnInteract(object data = null);
+        public bool OnInteract();
     }
 }

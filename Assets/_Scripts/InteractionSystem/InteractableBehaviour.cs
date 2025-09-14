@@ -1,35 +1,40 @@
 using _Scripts.SOAP.Variables;
-using _Scripts.SOAP.EventSystem.Events;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Scripts.InteractionSystem
 {
     public class InteractableBehaviour : MonoBehaviour, IInteractable
     {
-        [SerializeField] private string focusMessage = "Interact With Object";
-        [SerializeField] private bool isSingleUse = false;
+        [SerializeField] protected string focusMessage = "Interact With Object";
+        [SerializeField] protected bool isSingleUse = false;
 
         public StringVariable interactUIMessage;
 
-        [Header("Events")] public FlexibleEvent onInteractEvent;
+        [Header("Events")]
+        public UnityEvent onInteractEvent;
 
-        private bool used = false;
+        protected bool used = false;
 
-        public void OnFocus()
+        protected bool CanInteract => isSingleUse && used;
+        
+        public virtual void OnFocus()
         {
             interactUIMessage.Value = focusMessage;
         }
 
-        public void OnLostFocus()
+        public virtual void OnLostFocus()
         {
             interactUIMessage.Value = "";
         }
 
-        public void OnInteract(object data = null)
+        public virtual bool OnInteract()
         {
-            if (isSingleUse && used) return;
-            onInteractEvent?.Raise(data);
+            interactUIMessage.Value = "";
+            if (CanInteract) return false;
+            onInteractEvent?.Invoke();
             if (isSingleUse) used = true;
+            return true;
         }
     }
 }

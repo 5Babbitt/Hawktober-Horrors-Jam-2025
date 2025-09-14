@@ -1,9 +1,8 @@
-using _Scripts.InteractionSystem;
 using _Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Scripts.Player
+namespace _Scripts.InteractionSystem
 {
     public class FirstPersonPlayerInteractor : MonoBehaviour
     {
@@ -22,6 +21,9 @@ namespace _Scripts.Player
         protected void Awake()
         {
             cam = Camera.main;
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void OnEnable()
@@ -56,7 +58,7 @@ namespace _Scripts.Player
         private void OnInteract(InputAction.CallbackContext context)
         {
             interactPressed = context.ReadValueAsButton();
-            if (canInteract && interactPressed) currentInteractable?.OnInteract(null);
+            if (canInteract && interactPressed) currentInteractable?.OnInteract();
         }
 
         private void OnDrawGizmosSelected()
