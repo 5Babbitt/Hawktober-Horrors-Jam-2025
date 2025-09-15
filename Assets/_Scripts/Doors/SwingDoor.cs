@@ -11,8 +11,9 @@ namespace _Scripts.Doors
         private Camera cam;
         private Rigidbody rb;
         private HingeJoint hinge;
-        
-        [Header("Door Settings")]
+
+        [Header("Door Settings")] 
+        [SerializeField] private float doorSpeed;
         [SerializeField] private bool isLocked;
         [SerializeField] private bool isClosed;
         [Space(20)]
@@ -23,6 +24,7 @@ namespace _Scripts.Doors
 
         private void Start()
         {
+            cam = Camera.main;
             rb = GetComponent<Rigidbody>();
             hinge = GetComponent<HingeJoint>();
 
@@ -44,23 +46,52 @@ namespace _Scripts.Doors
             }
         }
 
-        public override void OnFocus()
+        private void FixedUpdate()
         {
-            interactUIMessage.Value = isLocked ? config.lockedFocusMessage : focusMessage;
+            if (!isInteracting) return;
+            
+            ApplyForceToDoor(doorSpeed);
         }
-
-        public override bool OnInteract()
+        
+        private void ApplyForceToDoor(float speedAdd)
         {
-            return base.OnInteract();
+            // Apply torque to the door around the hinge axis
+            Vector3 hingeAxis = hinge.transform.TransformDirection(hinge.axis);
+            rb.AddTorque(hingeAxis * (speedAdd * config.forceMultiplier * Time.fixedDeltaTime));
+        }
+        
+        private float GetSpeedAdd()
+        {
+            // Get the world position of the rigidbody's center of mass
+            Vector3 bodyCenter = rb.worldCenterOfMass;
+
+            // Get the hinge joint's axis and anchor point in world space
+            Vector3 hingeWorldPos = hinge.transform.TransformPoint(hinge.anchor);
+            Vector3 hingeAxis = hinge.transform.TransformDirection(hinge.axis);
+
+            // Calculate normalized vector from joint to body center
+            Vector3 jointToBody = (bodyCenter - hingeWorldPos).normalized;
+
+            // Calculate push direction based on mouse input
+            Vector3 pushAmount = (cam.transform.up + cam.transform.forward) * config.mouseDelta.Value.y + cam.transform.right * config.mouseDelta.Value.x;
+
+            // Calculate the rotation direction using cross product
+            Vector3 pushRotateDir = Vector3.Cross(jointToBody, pushAmount);
+
+            // Calculate how much the push aligns with the hinge axis
+            float speedAdd = Vector3.Dot(pushRotateDir, hingeAxis);
+
+            return speedAdd;
         }
 
         public void SetLocked(bool value)
         {
             isLocked = value;
             UpdateLimits(config.min, isLocked ? config.lockedMax : config.max);
+            SetInteractUIText(isLocked ? config.lockedFocusText : focusText);
         }
 
-        public void SetClosed(bool value)
+        private void SetClosed(bool value)
         {
             isClosed = value;
         }
@@ -74,6 +105,28 @@ namespace _Scripts.Doors
             limits.max = max; 
             limits.bounciness = config.bounciness;
             hinge.limits = limits;
+        }
+
+        protected override void OnFocus()
+        {
+            if (isLocked) SetInteractUIText(config.lockedFocusText);
+        }
+
+        protected override void OnLoseFocus() { }
+
+        protected override void OnInteractStart()
+        {
+            config.toggleCameraLook.Raise(false);
+        }
+
+        protected override void OnInteractCanceled() 
+        {
+            config.toggleCameraLook.Raise(true);
+        }
+
+        protected override void OnInteractPerformed(float holdTime)
+        {
+            doorSpeed = GetSpeedAdd();
         }
     }
 }

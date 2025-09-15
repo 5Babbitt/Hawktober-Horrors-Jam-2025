@@ -1,9 +1,15 @@
+using UnityEngine;
+
 namespace _Scripts.InteractionSystem
 {
     public interface IInteractable
     {
-        public void OnFocus();
-        public void OnLostFocus();
-        public bool OnInteract();
+        void Focus();
+        void LoseFocus();
+        void InteractStart();
+        void InteractCancel();
+        void InteractPerform(float holdTime);
+        bool CanInteract { get; }
+        Transform Transform { get; }
     }
 }

@@ -1,40 +1,74 @@
+using System;
 using _Scripts.SOAP.Variables;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace _Scripts.InteractionSystem
 {
-    public class InteractableBehaviour : MonoBehaviour, IInteractable
+    public abstract class InteractableBehaviour : MonoBehaviour, IInteractable
     {
-        [SerializeField] protected string focusMessage = "Interact With Object";
+        [Header("Interaction Settings")] 
+        [SerializeField] protected EInteractionType interactionType = EInteractionType.Click;
+        [SerializeField] protected bool canInteract = true;
         [SerializeField] protected bool isSingleUse = false;
-
-        public StringVariable interactUIMessage;
-
-        [Header("Events")]
-        public UnityEvent onInteractEvent;
-
-        protected bool used = false;
-
-        protected bool CanInteract => isSingleUse && used;
         
-        public virtual void OnFocus()
+        [Header("Interact UI Settings")]
+        [SerializeField] protected string focusText = "Interact with object";
+        [SerializeField] protected StringVariable interactUIText;
+
+        protected bool isInteracting = false;
+        protected bool isFocused = false;
+
+        public bool CanInteract => canInteract;
+        public Transform Transform => transform;
+
+        public void Focus()
         {
-            interactUIMessage.Value = focusMessage;
+            SetInteractUIText(focusText);
+            isFocused = true;
+            OnFocus();
         }
 
-        public virtual void OnLostFocus()
+        public void LoseFocus()
         {
-            interactUIMessage.Value = "";
+            ClearInteractUIText();
+            isFocused = false;
+            OnLoseFocus();
         }
 
-        public virtual bool OnInteract()
+        public void InteractStart()
         {
-            interactUIMessage.Value = "";
-            if (CanInteract) return false;
-            onInteractEvent?.Invoke();
-            if (isSingleUse) used = true;
-            return true;
+            if (!CanInteract) return;
+            
+            ClearInteractUIText();
+            isInteracting = true;
+            OnInteractStart();
         }
+
+        public void InteractCancel()
+        {
+            if (!isInteracting) return;
+
+            isInteracting = false;
+            OnInteractCanceled();
+            if (isSingleUse) canInteract = false;
+        }
+
+        public void InteractPerform(float holdTime)
+        {
+            if (interactionType != EInteractionType.ClickAndHold && (!CanInteract || !isInteracting)) return;
+
+            OnInteractPerformed(holdTime);
+        }
+
+        protected void SetInteractUIText(string text) => interactUIText.Value = text;
+        protected void ClearInteractUIText() => interactUIText.Value = string.Empty;
+
+        // Abstract methods for derived classes to implement
+        protected abstract void OnFocus();
+        protected abstract void OnLoseFocus();
+        protected abstract void OnInteractStart();
+        protected abstract void OnInteractCanceled();
+        protected abstract void OnInteractPerformed(float holdTime);
     }
 }

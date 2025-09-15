@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba640da2195418e86ee70fcabf1f1d6, type: 3}
   m_Name: DefaultDoorConfig
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.SwingDoor.DoorConfig
-  lookAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   closedThreshold: 2
+  lockedFocusText: Unlock Door
+  forceMultiplier: 5
+  toggleCameraLook: {fileID: 11400000, guid: 661990d2b57b72644859f5e705192dd2, type: 2}
+  mouseDelta: {fileID: 11400000, guid: 25df716f4f208fd45a40a6f5562fd347, type: 2}
   anchor: {x: 0, y: 1, z: 0}
   axis: {x: 0, y: -1, z: 0}
   useLimits: 1
   min: 0
   max: 90
-  lockedMax: 1
+  lockedMax: 5
   bounciness: 0.01
   massScale: 5

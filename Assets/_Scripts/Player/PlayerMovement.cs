@@ -18,6 +18,7 @@ namespace _Scripts.Player
         [SerializeField] private float playerGravity = Physics.gravity.y;
         [SerializeField] private float groundedGravity = -5f;
         [SerializeField] private Vector3Variable playerPos;
+        [SerializeField] private Vector2Variable lookDelta;
 
         [Header("Debug Values")]
         [SerializeField] private bool isMoving;
@@ -150,6 +151,7 @@ namespace _Scripts.Player
         private void OnLook(InputAction.CallbackContext context)
         {
             HandleRotation();
+            lookDelta.Value = context.ReadValue<Vector2>();
         }
     }
 }

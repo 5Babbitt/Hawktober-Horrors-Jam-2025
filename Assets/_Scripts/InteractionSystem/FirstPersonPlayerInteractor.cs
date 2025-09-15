@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,15 +8,18 @@ namespace _Scripts.InteractionSystem
     public class FirstPersonPlayerInteractor : MonoBehaviour
     {
         private Camera cam;
+        private IInteractable currentInteractable;
+        private float interactionStartTime;
+        private bool isInteracting;
 
         [SerializeField] private bool canInteract = true;
-        [SerializeField] private bool interactPressed;
+        
+        [Header("Raycast Settings")]
         [SerializeField] private float maxInteractDistance;
         [SerializeField] private LayerMask interactableLayers;
         
-        private IInteractable currentInteractable;
-        
-        [Header("Input Actions")] 
+        [Header("Input Settings")] 
+        [SerializeField] private bool interactPressed;
         public InputActionReference interactAction;
 
         protected void Awake()
@@ -29,7 +33,7 @@ namespace _Scripts.InteractionSystem
         private void OnEnable()
         {
             interactAction.action.Enable();
-            InputUtils.RegisterInputPhases(interactAction.action, OnInteract);
+            InputUtils.RegisterInputPhases(interactAction.action, OnInteract, InputPhases.Started | InputPhases.Canceled);
         }
 
         private void OnDisable()
@@ -38,36 +42,80 @@ namespace _Scripts.InteractionSystem
             InputUtils.UnregisterInputPhases(interactAction.action, OnInteract);
         }
 
-        private void FixedUpdate()
+        private void Update()
+        {
+            DetectInteractable();
+            PerformInteraction();
+        }
+
+        void DetectInteractable()
         {
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxInteractDistance, interactableLayers))
             {
                 if (!hit.collider.TryGetComponent(out IInteractable newInteractable)) return;
-                if (currentInteractable == newInteractable) return;
+                if (currentInteractable == newInteractable || !newInteractable.CanInteract) return;
                 
                 currentInteractable = newInteractable;
-                currentInteractable?.OnFocus();
+                currentInteractable?.Focus();
             }
-            else if (currentInteractable != null)
+            else if (currentInteractable != null && !isInteracting)
             {
-                currentInteractable.OnLostFocus();
+                currentInteractable.LoseFocus();
                 currentInteractable = null;
             }
+            
+            if (currentInteractable == null) return;
+
+            if (!(Vector3.Distance(transform.position, currentInteractable.Transform.position) > 5f)) return;
+            if (isInteracting) CancelInteraction();
+            currentInteractable.LoseFocus();
+            currentInteractable = null;
+        }
+
+        private void PerformInteraction()
+        {
+            if (!isInteracting || currentInteractable == null) return;
+            float holdTime = Time.time - interactionStartTime;
+            currentInteractable.InteractPerform(holdTime);
+        }
+
+        private void StartInteraction()
+        {
+            if (!canInteract || !currentInteractable.CanInteract) return;
+
+            interactionStartTime = Time.time;
+            isInteracting = true;
+            
+            currentInteractable?.InteractStart();
+        }
+
+        private void CancelInteraction()
+        {
+            if (!isInteracting) return;
+            
+            isInteracting = false;
+            
+            currentInteractable?.InteractCancel();
         }
 
         private void OnInteract(InputAction.CallbackContext context)
         {
             interactPressed = context.ReadValueAsButton();
-            if (canInteract && interactPressed) currentInteractable?.OnInteract();
+            
+            if (currentInteractable == null || !canInteract) return;
+            if (interactPressed) 
+                StartInteraction();
+            else
+                CancelInteraction();
         }
 
         private void OnDrawGizmosSelected()
         {
-            Transform cameraTransform = Camera.main.transform;
+            Transform camTransform = Camera.main.transform;
             
             Gizmos.color = Color.blueViolet;
-            Gizmos.DrawLine(cameraTransform.position, cameraTransform.position + cameraTransform.forward * maxInteractDistance);
-            Gizmos.DrawSphere(cameraTransform.position + (cameraTransform.forward * maxInteractDistance), 0.1f);
+            Gizmos.DrawLine(camTransform.position, camTransform.position + camTransform.forward * maxInteractDistance);
+            Gizmos.DrawSphere(camTransform.position + (camTransform.forward * maxInteractDistance), 0.1f);
         }
     }
 }
