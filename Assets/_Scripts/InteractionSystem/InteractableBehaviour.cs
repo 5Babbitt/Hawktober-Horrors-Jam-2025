@@ -48,7 +48,7 @@ namespace _Scripts.InteractionSystem
         public void InteractCancel()
         {
             if (!isInteracting) return;
-
+            Focus();
             isInteracting = false;
             OnInteractCanceled();
             if (isSingleUse) canInteract = false;

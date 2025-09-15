@@ -22,6 +22,6 @@ MonoBehaviour:
   useLimits: 1
   min: 0
   max: 90
-  lockedMax: 5
+  lockedMax: 3
   bounciness: 0.01
   massScale: 5
