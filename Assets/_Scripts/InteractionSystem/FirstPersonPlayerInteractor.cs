@@ -13,6 +13,7 @@ namespace _Scripts.InteractionSystem
         private bool isInteracting;
 
         [SerializeField] private bool canInteract = true;
+        [SerializeField] private float maxInteractionDistance = 5f;
         
         [Header("Raycast Settings")]
         [SerializeField] private float maxInteractDistance;
@@ -66,7 +67,7 @@ namespace _Scripts.InteractionSystem
             
             if (currentInteractable == null) return;
 
-            if (!(Vector3.Distance(transform.position, currentInteractable.Transform.position) > 5f)) return;
+            if (!(Vector3.Distance(transform.position, currentInteractable.Transform.position) > maxInteractionDistance)) return;
             if (isInteracting) CancelInteraction();
             currentInteractable.LoseFocus();
             currentInteractable = null;

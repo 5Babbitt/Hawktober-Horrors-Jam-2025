@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using _Scripts.SOAP.EventSystem.Events;
+using _Scripts.SOAP.Variables;
 using Unity.Cinemachine;
 using UnityEngine;
 
 namespace _Scripts.Player
 {
-    public class PlayerCameraController : PlayerFeature
+    public class PlayerCameraController : MonoBehaviour
     {
         private const string LookX = "Look X (Pan)";
         private const string LookY = "Look Y (Tilt)";
@@ -15,7 +16,8 @@ namespace _Scripts.Player
         private CinemachineFollow camFollow;
         private CinemachineInputAxisController camInput;
 
-        [Header("Crouch Camera Settings")]
+        [Header("Crouch Camera Settings")] 
+        [SerializeField] private BoolVariable playerCrouched;
         [SerializeField] private float standHeight = 0.75f;
         [SerializeField] private float crouchHeight = 0.5f;
         [SerializeField] private float crouchTime = 0.5f;
@@ -23,10 +25,8 @@ namespace _Scripts.Player
 
         private Coroutine crouchCoroutine;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-
             cineCam = GetComponentInChildren<CinemachineCamera>();
             camFollow = cineCam.gameObject.GetComponent<CinemachineFollow>();
             camInput = cineCam.gameObject.GetComponent<CinemachineInputAxisController>();
@@ -34,12 +34,12 @@ namespace _Scripts.Player
 
         private void OnEnable()
         {
-            Controller.OnCrouch += OnCrouch;
+            playerCrouched.OnValueChanged += OnCrouch;
         }
         
         private void OnDisable()
         {
-            Controller.OnCrouch -= OnCrouch;
+            playerCrouched.OnValueChanged -= OnCrouch;
         }
 
         private void Start()

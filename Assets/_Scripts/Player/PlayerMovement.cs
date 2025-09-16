@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.Player
 {
-    public class PlayerMovement : PlayerFeature
+    public class PlayerMovement : MonoBehaviour
     {
         private CharacterController characterController;
         private Camera cam;
@@ -19,6 +19,7 @@ namespace _Scripts.Player
         [SerializeField] private float groundedGravity = -5f;
         [SerializeField] private Vector3Variable playerPos;
         [SerializeField] private Vector2Variable lookDelta;
+        [SerializeField] private BoolVariable playerCrouched;
 
         [Header("Debug Values")]
         [SerializeField] private bool isMoving;
@@ -34,10 +35,8 @@ namespace _Scripts.Player
         public InputActionReference runAction;
         public InputActionReference lookAction;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-            
             characterController = GetComponent<CharacterController>();
             cam = Camera.main;
         }
@@ -136,7 +135,7 @@ namespace _Scripts.Player
             if (newCrouchValue == isCrouching) return;
             
             isCrouching = newCrouchValue;
-            Controller.OnCrouch.Invoke(isCrouching);
+            playerCrouched.Value = isCrouching;
             
             isRunning = false;
         }

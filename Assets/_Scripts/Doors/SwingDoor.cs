@@ -2,6 +2,7 @@ using System;
 using _Scripts.InteractionSystem;
 using _Scripts.SOAP.EventSystem.Events;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Scripts.Doors
 {
@@ -14,13 +15,15 @@ namespace _Scripts.Doors
 
         [Header("Door Settings")] 
         [SerializeField] private float doorSpeed;
+        
+        [Header("Lock Settings")]
         [SerializeField] private bool isLocked;
-        [SerializeField] private bool isClosed;
+        [SerializeField] private string requiredKeyId = "";
+        
         [Space(20)]
         [SerializeField] private DoorConfig config;
-
-        public Rigidbody Rb => rb;
-        public HingeJoint Hinge => hinge;
+        
+        private bool wasClosed;
 
         private void Start()
         {
@@ -33,17 +36,15 @@ namespace _Scripts.Doors
             hinge.massScale = config.massScale;
             hinge.useLimits = config.useLimits;
             UpdateLimits(config.min, isLocked ? config.lockedMax : config.max);
+            
+            wasClosed = InClosedPosition();
         }
 
         private void Update()
         {
             if (isLocked) return;
             
-            if (!isClosed && InClosedPosition())
-            {
-                // shut door
-                SetClosed(true);
-            }
+            HandleCloseDetection();
         }
 
         private void FixedUpdate()
@@ -84,19 +85,13 @@ namespace _Scripts.Doors
             return speedAdd;
         }
 
-        public void SetLocked(bool value)
+        private void SetLocked(bool value)
         {
             isLocked = value;
             UpdateLimits(config.min, isLocked ? config.lockedMax : config.max);
             SetInteractUIText(isLocked ? config.lockedFocusText : focusText);
         }
 
-        private void SetClosed(bool value)
-        {
-            isClosed = value;
-        }
-
-        private bool InClosedPosition() => Mathf.Abs(hinge.angle - hinge.limits.min) < config.closedThreshold;
 
         private void UpdateLimits(float min, float max)
         {
@@ -106,7 +101,103 @@ namespace _Scripts.Doors
             limits.bounciness = config.bounciness;
             hinge.limits = limits;
         }
+        
+        #region Open/Close Methods
+        private bool InClosedPosition() => Mathf.Abs(hinge.angle - hinge.limits.min) < config.closedThreshold;
+        
+        private void HandleCloseDetection()
+        {
+            bool currentlyInClosedPosition = InClosedPosition();
+            
+            // Check if door state changed
+            if (currentlyInClosedPosition != wasClosed)
+            {
+                if (currentlyInClosedPosition)
+                {
+                    // Door just reached closed position
+                    HandleDoorClosed();
+                }
+                else
+                {
+                    // Door just left closed position
+                    HandleDoorOpened();
+                }
+                
+                wasClosed = currentlyInClosedPosition;
+            }
+        }
 
+        private void HandleDoorClosed()
+        {
+            SimpleSnapToClosed();
+            Debug.Log($"Door {name} closed");
+        }
+
+        private void HandleDoorOpened()
+        {
+            Debug.Log($"Door {name} opened");
+        }
+        
+        void SimpleSnapToClosed()
+        {
+            float currentAngle = hinge.angle;
+            float targetAngle = hinge.limits.min;
+            float angleDifference = targetAngle - currentAngle;
+    
+            if (Mathf.Abs(angleDifference) > 0.5f)
+            {
+                Vector3 hingeAxis = hinge.transform.TransformDirection(hinge.axis);
+                rb.AddTorque(hingeAxis * (angleDifference * 2f), ForceMode.VelocityChange);
+            }
+        }
+        #endregion
+
+        #region Lock Methods
+        private bool TryUnlock(string keyId = "")
+        {
+            if (!isLocked) return true; // Already unlocked
+            
+            // Check if key is required
+            if (!string.IsNullOrEmpty(config.requiredKeyId))
+            {
+                // Key required - check if provided key matches
+                if (string.IsNullOrEmpty(keyId))
+                {
+                    // No key provided
+                    SetInteractUIText(config.noKeyText);
+                    return false;
+                }
+        
+                if (keyId != config.requiredKeyId)
+                {
+                    // Wrong key
+                    SetInteractUIText(config.wrongKeyText);
+                    return false;
+                }
+            }
+    
+            // Unlock successful
+            SetLocked(false);
+            SetInteractUIText(config.unlockSuccessText);
+    
+            // TODO Raise unlock event for audio/effects
+    
+            Debug.Log($"Door {name} unlocked with key: {keyId}");
+            return true;
+        }
+
+        private string GetPlayerCurrentKey()
+        {
+            // TODO: Integrate with your inventory/key system here
+            // Examples:
+            // return InventoryManager.Instance.GetSelectedKey();
+            // return PlayerController.Instance.CurrentKey;
+            return "1"; // Default: no key
+        }    
+
+        #endregion
+
+        #region Interaction Methods
         protected override void OnFocus()
         {
             if (isLocked) SetInteractUIText(config.lockedFocusText);
@@ -116,6 +207,18 @@ namespace _Scripts.Doors
 
         protected override void OnInteractStart()
         {
+            if (isLocked)
+            {
+                // Try to unlock with player's current key
+                string playerKey = GetPlayerCurrentKey(); // You'll implement this
+                if (!TryUnlock(playerKey))
+                {
+                    // Unlock failed - don't disable camera look
+                    return;
+                }
+                // If unlock succeeded, fall through to normal interaction
+            }
+            
             config.toggleCameraLook.Raise(false);
         }
 
@@ -128,5 +231,6 @@ namespace _Scripts.Doors
         {
             doorSpeed = GetSpeedAdd();
         }
+        #endregion
     }
 }

@@ -11,6 +11,12 @@ namespace _Scripts.Doors
         public float closedThreshold = 2f;
         public string lockedFocusText = "Unlock Door";
         
+        [Header("Lock Settings")]
+        public string requiredKeyId = ""; // Empty = no key required, just unlock
+        public string noKeyText = "Requires a key";
+        public string wrongKeyText = "Wrong key";
+        public string unlockSuccessText = "Door unlocked";
+        
         [Header("Interact Settings")]
         public float forceMultiplier = 5f;
         public BoolEvent toggleCameraLook;

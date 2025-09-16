@@ -5,7 +5,7 @@ namespace _Scripts.SOAP.Variables
 {
     public abstract class ScriptableVariable<T> : RuntimeScriptableObject
     {
-        [SerializeField] protected T InitialValue;
+        [SerializeField] protected T initialValue;
         [SerializeField] protected T value;
 
         public event UnityAction<T> OnValueChanged = delegate { };
@@ -23,7 +23,7 @@ namespace _Scripts.SOAP.Variables
         
         protected override void OnReset()
         {
-            OnValueChanged.Invoke(value = InitialValue);
+            OnValueChanged.Invoke(value = initialValue);
         }
         
         protected abstract bool EqualityComparer(T a, T b);
