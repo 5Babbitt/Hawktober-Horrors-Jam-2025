@@ -1,4 +1,4 @@
-namespace _Scripts.InteractionSystem.Interactables
+namespace _Scripts.InteractionSystem
 {
     public class InteractableCube : InteractableBehaviour
     {
