@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5803e2afcfa74e5ba33debd3dd622044, type: 3}
+  m_Name: NotesConfig
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Notes.NotesConfig
+  toggleNotesUI: {fileID: 11400000, guid: 18abbf0299ae6da4d82c9ad1ac851c03, type: 2}
+  notesUIText: {fileID: 11400000, guid: ca7bf8a6adbd500408a93f62839ebd28, type: 2}
+  emissionColor: {r: 1, g: 0.9582801, b: 0.4764151, a: 1}
+  emissionIntensity: 0.25
