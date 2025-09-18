@@ -1,6 +1,8 @@
 using System;
 using _Scripts.InteractionSystem;
+using _Scripts.InventorySystem;
 using _Scripts.SOAP.EventSystem.Events;
+using _Scripts.SOAP.Variables;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +20,7 @@ namespace _Scripts.Doors
         
         [Header("Lock Settings")]
         [SerializeField] private bool isLocked;
-        [SerializeField] private string requiredKeyId = "";
+        [SerializeField] private StringVariable requiredKeyId;
         
         [Space(20)]
         [SerializeField] private DoorConfig config;
@@ -143,37 +145,31 @@ namespace _Scripts.Doors
             float currentAngle = hinge.angle;
             float targetAngle = hinge.limits.min;
             float angleDifference = targetAngle - currentAngle;
-    
-            if (Mathf.Abs(angleDifference) > 0.5f)
-            {
-                Vector3 hingeAxis = hinge.transform.TransformDirection(hinge.axis);
-                rb.AddTorque(hingeAxis * (angleDifference * 2f), ForceMode.VelocityChange);
-            }
+
+            if (!(Mathf.Abs(angleDifference) > 0.5f)) return;
+            
+            Vector3 hingeAxis = hinge.transform.TransformDirection(hinge.axis);
+            rb.AddTorque(hingeAxis * (angleDifference * 2f), ForceMode.VelocityChange);
         }
         #endregion
 
         #region Lock Methods
-        private bool TryUnlock(string keyId = "")
+        private bool TryUnlock()
         {
             if (!isLocked) return true; // Already unlocked
-            
-            // Check if key is required
-            if (!string.IsNullOrEmpty(config.requiredKeyId))
+
+            if (!requiredKeyId)
             {
-                // Key required - check if provided key matches
-                if (string.IsNullOrEmpty(keyId))
-                {
-                    // No key provided
-                    SetInteractUIText(config.noKeyText);
-                    return false;
-                }
-        
-                if (keyId != config.requiredKeyId)
-                {
-                    // Wrong key
-                    SetInteractUIText(config.wrongKeyText);
-                    return false;
-                }
+                Debug.LogError($"locked door {name} has no required key");
+                return false;
+            }
+            
+            // Check if provided key matches
+            if (!Inventory.Instance.HasItem(requiredKeyId.Value))
+            {
+                // No key provided
+                SetInteractUIText(config.noKeyText);
+                return false;
             }
     
             // Unlock successful
@@ -182,18 +178,9 @@ namespace _Scripts.Doors
     
             // TODO Raise unlock event for audio/effects
     
-            Debug.Log($"Door {name} unlocked with key: {keyId}");
+            Debug.Log($"Door {name} unlocked with key: {requiredKeyId?.Value}");
             return true;
         }
-
-        private string GetPlayerCurrentKey()
-        {
-            // TODO: Integrate with your inventory/key system here
-            // Examples:
-            // return InventoryManager.Instance.GetSelectedKey();
-            // return PlayerController.Instance.CurrentKey;
-            return "1"; // Default: no key
-        }    
 
         #endregion
 
@@ -210,8 +197,7 @@ namespace _Scripts.Doors
             if (isLocked)
             {
                 // Try to unlock with player's current key
-                string playerKey = GetPlayerCurrentKey(); // You'll implement this
-                if (!TryUnlock(playerKey))
+                if (!TryUnlock())
                 {
                     // Unlock failed - don't disable camera look
                     return;
