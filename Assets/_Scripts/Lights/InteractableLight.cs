@@ -11,17 +11,19 @@ namespace _Scripts.Lights
         [SerializeField] private bool isLit;
         [SerializeField] private new Light light;
         [SerializeField] private InteractableLightConfig config;
+        [SerializeField] private FlickerConfig flickerSettings;
 
         private float burnTime;
         private float currentBurnTime;
         private float currentIntensity;
-        private float flickerTimer;
 
         public bool IsLit => isLit;
 
         private void Awake()
         {
             light = GetComponentInChildren<Light>();
+
+            light.range = config.range;
         }
 
         private void Start()
@@ -32,37 +34,20 @@ namespace _Scripts.Lights
         private void Update()
         {
             if (!isLit) return;
-
-            currentBurnTime -= Time.deltaTime;
-
+            
             DiminishIntensityOverTime();
             
-            light.intensity = Mathf.Max(config.minIntensity, currentIntensity * ApplyFlicker());
+            light.intensity = Mathf.Max(config.minIntensity, currentIntensity * flickerSettings.ApplyFlicker());
             
             if (currentBurnTime <= 0) ToggleLight(false);
         }
 
         private void DiminishIntensityOverTime()
         {
+            if (currentBurnTime > 0) currentBurnTime -= Time.deltaTime;
             float burnProgress = 1f - (currentBurnTime / burnTime);
             float intensityMultiplier = Mathf.Lerp(1f, config.minIntensity / config.maxIntensity, burnProgress);
             currentIntensity = config.maxIntensity * intensityMultiplier;
-        }
-        
-        private float ApplyFlicker()
-        {
-            flickerTimer += Time.deltaTime * config.flickerSpeed;
-        
-            // Use Perlin noise for more natural flicker
-            float noiseValue = Mathf.PerlinNoise(flickerTimer, 0f);
-        
-            // Apply flicker curve for more control
-            float curveValue = config.flickerCurve.Evaluate(noiseValue);
-        
-            // Calculate flicker multiplier (1.0 = no change, < 1.0 = dimmer, > 1.0 = brighter)
-            float flickerMultiplier = 1f + ((curveValue - 0.5f) * 2f * config.flickerIntensity);
-        
-            return flickerMultiplier;
         }
 
         public void ExtinguishLight()
@@ -98,7 +83,6 @@ namespace _Scripts.Lights
             if (isLit)
             {
                 burnTime = Random.Range(config.minBurnTime, config.maxBurnTime);
-                flickerTimer = Random.Range(0f, 100f); 
                 currentIntensity = config.maxIntensity;
                 currentBurnTime = burnTime;
             }

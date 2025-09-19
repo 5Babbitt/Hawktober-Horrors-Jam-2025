@@ -80,9 +80,8 @@ namespace _Scripts.Player
             while (elapsedTime < crouchTime)
             {
                 elapsedTime += Time.deltaTime;
-                float progress = elapsedTime / crouchTime;
 
-                progress = crouchTransitionCurve.Evaluate(progress);
+                float progress = crouchTransitionCurve.Evaluate(elapsedTime / crouchTime);
 
                 camFollow.FollowOffset.y = Mathf.Lerp(startHeight, targetHeight, progress);
 

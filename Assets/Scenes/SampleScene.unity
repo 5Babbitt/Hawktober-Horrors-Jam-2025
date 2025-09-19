@@ -14,16 +14,16 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.07, g: 0.07, b: 0.07, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.042
+  m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 48.82
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.75
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 64
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.6
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
   m_UseRadianceAmbientProbe: 0
@@ -1715,13 +1715,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09761286, y: -0.25749406, z: 0.026155282, w: 0.960981}
+  m_LocalRotation: {x: -0.6830127, y: -0.18301266, z: -0.18301266, w: 0.6830127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 11.6, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,44 +1940,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429362086}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7965ec9dfd7c95146b81e434c62f51ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Player.PlayerLamp
-  isLit: 0
-  intensity: 0
-  maxIntensity: 0
-  minIntensity: 0
-  maxBurnTime: 0
-  minBurnTime: 0
-  flickerSpeed: 10
-  flickerIntensity: 0.3
-  flickerCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  lampAction: {fileID: 0}
+  isLit: 1
+  lightingScale: 1
+  currentIntensity: 0
+  maxIntensity: 6
+  minIntensity: 0.5
+  burnTime: 30
+  flickerSettings: {fileID: 11400000, guid: 43b95ad509e3f0b4981b2d54f5ace9da, type: 2}
+  rechargeDuration: 0.15
+  holdDuration: 0.6666667
+  rechargeCooldown: 1
+  maxRecharge: 0.375
+  minRecharge: 0.3
+  lampAction: {fileID: 3208897652535869723, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &518013390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51fa9060a486d84a82941c3482d4445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Notes.NotesInteractable
-  interactionType: 0
+  interactionType: 1
   canInteract: 1
   isSingleUse: 0
   focusText: Read
@@ -4172,6 +4152,7 @@ MonoBehaviour:
   isLit: 0
   light: {fileID: 0}
   config: {fileID: 11400000, guid: 35f116695a6562d459db19c3b9f0bdfe, type: 2}
+  flickerSettings: {fileID: 11400000, guid: af26617c9e9d3f64089a8064f711b292, type: 2}
 --- !u!1 &1458565535
 GameObject:
   m_ObjectHideFlags: 0
