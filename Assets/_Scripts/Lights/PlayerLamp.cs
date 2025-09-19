@@ -1,10 +1,9 @@
 using System.Collections;
-using _Scripts.Lights;
 using _Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Scripts.Player
+namespace _Scripts.Lights
 {
     public class PlayerLamp : MonoBehaviour
     {
@@ -16,19 +15,19 @@ namespace _Scripts.Player
         [SerializeField] private float currentIntensity;
         
         [Header("Light Settings")] 
-        [SerializeField] private float maxIntensity;
-        [SerializeField] private float minIntensity;
-        [SerializeField] private float burnTime;
+        [SerializeField] private float maxIntensity = 6;
+        [SerializeField] private float minIntensity = 0.5f;
+        [SerializeField] private float burnTime = 20;
 
         [Space(10)]
         [SerializeField] private FlickerConfig flickerSettings;
 
         [Header("Recharge Settings")] 
-        [SerializeField] private float rechargeDuration;
-        [SerializeField] private float holdDuration;
-        [SerializeField] private float rechargeCooldown;
-        [SerializeField, Range(0f, 1f)] private float maxRecharge;
-        [SerializeField, Range(0f, 1f)] private float minRecharge;
+        [SerializeField] private float rechargeDuration = 0.15f;
+        [SerializeField] private float holdDuration = 2/3f;
+        [SerializeField] private float rechargeCooldown = 1;
+        [SerializeField, Range(0f, 1f)] private float maxRecharge = 0.375f;
+        [SerializeField, Range(0f, 1f)] private float minRecharge = 0.3f;
 
         [Header("Input Settings")] 
         [SerializeField] private InputActionReference lampAction;
