@@ -988,6 +988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210668825}
   - component: {fileID: 210668824}
+  - component: {fileID: 210668826}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1033,6 +1034,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210668826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210668823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a587516d0c4734180eec578fbb62ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.UI.HUDController
+  interactUIText: {fileID: 11400000, guid: de891eced8aacdd4bbd9b0eedc2cee9f, type: 2}
+  notesUIText: {fileID: 11400000, guid: ca7bf8a6adbd500408a93f62839ebd28, type: 2}
+  doc: {fileID: 210668824}
 --- !u!1 &246469295
 GameObject:
   m_ObjectHideFlags: 0
