@@ -22,6 +22,9 @@ namespace _Scripts.UI
         private VisualElement hudElement;
         private VisualElement notesOverlayElement;
 
+        [SerializeField] private Color notesTint;
+        [SerializeField] private Color notesTintDarkest;
+        
         private void Awake()
         {
             var root = doc.rootVisualElement;
@@ -49,18 +52,56 @@ namespace _Scripts.UI
         {
             interactUIText.Value = "";
             notesUIText.Value = "";
+
+            notesTint = notesOverlayElement.resolvedStyle.unityBackgroundImageTintColor;
         }
 
         private void OnNotesTextChanged(string text)
         {
             noteLabel.text = text;
+            UpdateNotesTint();
 
             notesOverlayElement.style.visibility = string.IsNullOrEmpty(text) ? Visibility.Hidden : Visibility.Visible;
+        }
+
+        private void SetNotesTintColor(float brightness)
+        {
+            
         }
 
         private void OnInteractTextChanged(string text)
         {
             interactLabel.text = text;
+        }
+        
+        private float GetLightingBrightness()
+        {
+            var lights = FindObjectsByType<Light>(FindObjectsSortMode.None);
+            float brightness = RenderSettings.ambientLight.grayscale;
+    
+            foreach (var lightUnit in lights)
+            {
+                if (!lightUnit.enabled) continue;
+                var distance = Vector3.Distance(transform.position, lightUnit.transform.position);
+                if (distance < lightUnit.range)
+                {
+                    var attenuation = 1f - (distance / lightUnit.range);
+                    brightness += lightUnit.intensity * lightUnit.color.grayscale * attenuation;
+                }
+            }
+    
+            return Mathf.Clamp01(brightness - 0.5f);
+        }
+        
+        private void UpdateNotesTint()
+        {
+            float brightness = GetLightingBrightness(); // or whichever method you choose
+    
+            Debug.Log(brightness);
+            
+            // Darker environments make notes harder to read
+            Color adjustedTint = Color.Lerp(notesTintDarkest, notesTint, brightness);
+            notesOverlayElement.style.unityBackgroundImageTintColor = adjustedTint;
         }
     }
 }

@@ -1049,6 +1049,8 @@ MonoBehaviour:
   interactUIText: {fileID: 11400000, guid: de891eced8aacdd4bbd9b0eedc2cee9f, type: 2}
   notesUIText: {fileID: 11400000, guid: ca7bf8a6adbd500408a93f62839ebd28, type: 2}
   doc: {fileID: 210668824}
+  notesTint: {r: 0.7529412, g: 0.6666667, b: 0.54901963, a: 1}
+  notesTintDarkest: {r: 0.2, g: 0.13333334, b: 0.09411765, a: 1}
 --- !u!1 &246469295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1120,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246469295}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.740566, b: 0.740566, a: 1}
@@ -1633,7 +1635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -1641,7 +1643,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
