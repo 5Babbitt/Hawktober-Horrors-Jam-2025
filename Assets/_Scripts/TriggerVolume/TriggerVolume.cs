@@ -1,6 +1,4 @@
-using System;
 using _Scripts.SOAP.EventSystem.Events;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.TriggerVolume
@@ -22,8 +20,6 @@ namespace _Scripts.TriggerVolume
             collider = GetComponent<BoxCollider>();
 
             rb.isKinematic = true;
-            
-            gameObject.tag = "Trigger";
             numTimesTriggered = 0;
             collider.isTrigger = true;
         }
