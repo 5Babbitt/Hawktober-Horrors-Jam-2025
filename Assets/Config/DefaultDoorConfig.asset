@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.SwingDoor.DoorConfig
   closedThreshold: 2
   lockedFocusText: Unlock Door
+  requiredKeyId: 
+  noKeyText: Requires a key
+  wrongKeyText: Wrong key
+  unlockSuccessText: Door unlocked
   forceMultiplier: 5
   toggleCameraLook: {fileID: 11400000, guid: 661990d2b57b72644859f5e705192dd2, type: 2}
   mouseDelta: {fileID: 11400000, guid: 25df716f4f208fd45a40a6f5562fd347, type: 2}
@@ -22,6 +26,6 @@ MonoBehaviour:
   useLimits: 1
   min: 0
   max: 90
-  lockedMax: 3
+  lockedMax: 2
   bounciness: 0.01
   massScale: 5

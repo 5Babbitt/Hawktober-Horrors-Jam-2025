@@ -194,15 +194,13 @@ namespace _Scripts.Doors
 
         protected override void OnInteractStart()
         {
-            if (isLocked)
+            if (!TryUnlock())
             {
-                // Try to unlock with player's current key
-                if (!TryUnlock())
-                {
-                    // Unlock failed - don't disable camera look
-                    return;
-                }
-                // If unlock succeeded, fall through to normal interaction
+                // Unlock failed - don't disable camera look
+            }
+            else
+            {
+                // Unlock Successful
             }
             
             config.toggleCameraLook.Raise(false);
