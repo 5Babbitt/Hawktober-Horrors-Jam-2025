@@ -12,7 +12,7 @@ namespace _Scripts.TriggerVolume
 
         private new BoxCollider collider;
 
-        private bool CanInteract => triggerLimit > 0 && numTimesTriggered < triggerLimit || triggerLimit == 0;
+        protected bool CanInteract => triggerLimit > 0 && numTimesTriggered < triggerLimit || triggerLimit == 0;
 
         private void Awake()
         { 
@@ -24,7 +24,7 @@ namespace _Scripts.TriggerVolume
             collider.isTrigger = true;
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected virtual void OnTriggerEnter(Collider other)
         {
             if (!CanInteract) return;
             if (!other.CompareTag("Player")) return;
@@ -32,7 +32,7 @@ namespace _Scripts.TriggerVolume
             RaiseTriggerEvent();
         }
 
-        private void RaiseTriggerEvent()
+        protected void RaiseTriggerEvent()
         {
             Debug.Log("Triggered");
             
@@ -40,12 +40,12 @@ namespace _Scripts.TriggerVolume
             triggerEvent.Raise();
         }
 
-        private void OnDrawGizmos()
+        protected virtual void OnDrawGizmos()
         {
             if (!collider) collider = GetComponent<BoxCollider>();
             
             Gizmos.color = Color.mediumSpringGreen;
-            Gizmos.DrawWireCube(transform.position, collider.size);
+            Gizmos.DrawWireCube(transform.position + collider.center, collider.size);
         }
     }
 }
