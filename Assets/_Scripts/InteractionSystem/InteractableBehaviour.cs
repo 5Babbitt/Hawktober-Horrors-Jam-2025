@@ -18,6 +18,7 @@ namespace _Scripts.InteractionSystem
 
         protected bool isInteracting = false;
         protected bool isFocused = false;
+        protected bool isToggled = false;
 
         public bool CanInteract => canInteract;
         public Transform Transform => transform;
@@ -42,12 +43,19 @@ namespace _Scripts.InteractionSystem
             
             ClearInteractUIText();
             isInteracting = true;
+
+            if (interactionType == EInteractionType.ClickToToggle && isInteracting)
+            {
+                isToggled = !isToggled;
+            }
+            
             OnInteractStart();
         }
 
         public void InteractCancel()
         {
             if (!isInteracting) return;
+            if (interactionType == EInteractionType.ClickToToggle && isToggled) return;
             if (isFocused) Focus();
             isInteracting = false;
             OnInteractCanceled();

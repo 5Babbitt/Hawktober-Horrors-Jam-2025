@@ -21,6 +21,7 @@ namespace _Scripts.SOAP.Editor
                 objectType = typeof(TVariable)
             };
             objectField.BindProperty(property);
+            
             container.Add(objectField);
 
             var valueField = CreateValueField(DefaultFieldLabel());
@@ -66,9 +67,7 @@ namespace _Scripts.SOAP.Editor
         {
             variable.OnValueChanged += value => callback(value);
         }
-
         
-
         protected virtual VisualElement CreateValueField(string label)
         {
             return new TField { 
