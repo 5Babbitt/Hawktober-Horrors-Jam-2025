@@ -9,6 +9,7 @@ namespace _Scripts.Doors
     {
         [Header("Door Settings")]
         public float closedThreshold = 2f;
+        public float doorSpeedShutThreshold = 5f;
         public string lockedFocusText = "Unlock Door";
         
         [Header("Lock Settings")]

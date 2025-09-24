@@ -1,10 +1,7 @@
-using System;
 using _Scripts.InteractionSystem;
 using _Scripts.InventorySystem;
-using _Scripts.SOAP.EventSystem.Events;
 using _Scripts.SOAP.Variables;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace _Scripts.Doors
 {
@@ -24,6 +21,7 @@ namespace _Scripts.Doors
         
         [Space(20)]
         [SerializeField] private DoorConfig config;
+        [SerializeField] private DoorAudioConfig audioConfig;
         
         private bool wasClosed;
 
@@ -106,6 +104,8 @@ namespace _Scripts.Doors
         
         #region Open/Close Methods
         private bool InClosedPosition() => Mathf.Abs(hinge.angle - hinge.limits.min) < config.closedThreshold;
+
+        private bool WasDoorShut() => rb.angularVelocity.sqrMagnitude >= config.doorSpeedShutThreshold;
         
         private void HandleCloseDetection()
         {
@@ -133,11 +133,28 @@ namespace _Scripts.Doors
         {
             SimpleSnapToClosed();
             Debug.Log($"Door {name} closed");
+            
+            if (isLocked)
+            {
+                audioConfig?.doorShake?.Post(gameObject);
+            }
+            else
+            {
+                if (WasDoorShut()) 
+                    audioConfig?.doorShut?.Post(gameObject);
+                else 
+                    audioConfig?.doorClose?.Post(gameObject);
+            }
         }
 
         private void HandleDoorOpened()
         {
             Debug.Log($"Door {name} opened");
+            
+            if (isLocked)
+                audioConfig?.doorShake?.Post(gameObject);
+            else
+                audioConfig?.doorOpen?.Post(gameObject);
         }
         
         void SimpleSnapToClosed()
@@ -176,7 +193,7 @@ namespace _Scripts.Doors
             SetLocked(false);
             SetInteractUIText(config.unlockSuccessText);
     
-            // TODO Raise unlock event for audio/effects
+            audioConfig?.doorUnlock?.Post(gameObject);
     
             Debug.Log($"Door {name} unlocked with key: {requiredKeyId?.Value}");
             return true;
