@@ -5,6 +5,7 @@ namespace _Scripts.TriggerVolume
 {
     public class TriggerLookAt : TriggerVolume
     {
+        [Header("Look At Settings")]
         [SerializeField] private Transform lookTarget;
         [SerializeField] private float lookAngleThreshold = 15f;
 

@@ -1,3 +1,4 @@
+using System;
 using _Scripts.SOAP.EventSystem.Events;
 using UnityEngine;
 
@@ -6,9 +7,12 @@ namespace _Scripts.TriggerVolume
     [RequireComponent(typeof(BoxCollider), typeof(Rigidbody))]
     public class TriggerVolume : MonoBehaviour
     {
-        [SerializeField] private int numTimesTriggered;
-        [SerializeField] private int triggerLimit = 1;
-        [SerializeField] private FlexibleEvent triggerEvent;
+        [Header("Trigger Settings")]
+        [SerializeField] protected int numTimesTriggered;
+        [SerializeField] protected int triggerLimit = 1;
+        
+        [Space(10)]
+        [SerializeField] protected FlexibleEvent triggerEvent;
 
         private new BoxCollider collider;
 
@@ -32,6 +36,7 @@ namespace _Scripts.TriggerVolume
             RaiseTriggerEvent();
         }
 
+        [ContextMenu("Raise Trigger")]
         protected void RaiseTriggerEvent()
         {
             Debug.Log("Triggered");

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using _Scripts.Enemies;
 using _Scripts.SOAP.EventSystem.Events;
 using _Scripts.SOAP.Variables;
 using Unity.Cinemachine;
@@ -11,7 +12,8 @@ namespace _Scripts.Player
     {
         private const string LookX = "Look X (Pan)";
         private const string LookY = "Look Y (Tilt)";
-        
+
+        private Camera cam;
         private CinemachineCamera cineCam;
         private CinemachineFollow camFollow;
         private CinemachineInputAxisController camInput;
@@ -23,10 +25,16 @@ namespace _Scripts.Player
         [SerializeField] private float crouchTime = 0.5f;
         [SerializeField] private AnimationCurve crouchTransitionCurve;
 
+        [Header("Enemy Detection Settings")] 
+        [SerializeField] private BoolVariable playerCanSeeMonster;
+        [SerializeField] private Vector3Variable enemyPosition;
+        [SerializeField] private float lookAngleThreshold = 15f;
+
         private Coroutine crouchCoroutine;
 
         private void Awake()
         {
+            cam = Camera.main;
             cineCam = GetComponentInChildren<CinemachineCamera>();
             camFollow = cineCam.gameObject.GetComponent<CinemachineFollow>();
             camInput = cineCam.gameObject.GetComponent<CinemachineInputAxisController>();
@@ -56,6 +64,22 @@ namespace _Scripts.Player
             
             float targetHeight = isCrouching ? crouchHeight : standHeight;
             crouchCoroutine = StartCoroutine(CrouchTransition(targetHeight));
+        }
+
+        private void EnemyDetection()
+        {
+            if (playerCanSeeMonster.Value) return;
+            
+            Vector3 directionToTarget = (enemyPosition.Value - cam.transform.position).normalized;
+            Vector3 cameraForward = cam.transform.forward;
+            
+            // Calculate angle between camera forward and direction to target
+            float angle = Vector3.Angle(cameraForward, directionToTarget);
+            
+            // Check if player is looking close enough to the target
+            if (!(angle <= lookAngleThreshold)) return;
+
+            playerCanSeeMonster.Value = true;
         }
 
         public void SetCameraFreelook(bool canLook)
@@ -90,6 +114,11 @@ namespace _Scripts.Player
 
             camFollow.FollowOffset.y = targetHeight;
             crouchCoroutine = null;
+        }
+
+        private void OnSeenEnemy()
+        {
+            playerCanSeeMonster.Value = true;
         }
 
         private void OnValidate()

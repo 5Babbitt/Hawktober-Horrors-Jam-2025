@@ -1,4 +1,5 @@
 using _Scripts.InteractionSystem;
+using _Scripts.SOAP.EventSystem.Events;
 using _Scripts.SOAP.Variables;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace _Scripts.Notes
         [SerializeField] private NotesConfig config;
         [SerializeField] private StringVariable noteUIText;
         [SerializeField] private string noteKey;
+        [SerializeField] private BoolEvent togglePlayerSystems;
         
         private MeshRenderer meshRenderer;
         private Material materialInstance;
@@ -37,6 +39,7 @@ namespace _Scripts.Notes
 
         protected override void OnInteractStart()
         {
+            togglePlayerSystems.Raise(!isToggled);
             noteUIText.Value = NoteSystem.Instance.GetNote(noteKey);
             config.toggleNotesUI.Raise(true);
         }
