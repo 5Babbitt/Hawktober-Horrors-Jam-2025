@@ -1,6 +1,476 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}" SchemaVersion="123">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchContainer Name="Footsteps" ID="{CCE838F4-9821-46D9-B930-2CFEFC8F4A16}" ShortID="228624766">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Footsteps" ID="{F478BFC0-3344-48A1-8CE4-90A7CA861F9A}" WorkUnitID="{D982C0D6-DC9B-446F-B4AB-1BC6A9E8A5DD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Dirt" ID="{6EBE0789-76C6-4F58-8A5D-CD0370FDB0D7}" ShortID="785660584">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Dirt_01" ID="{A0098876-C98C-4FE1-9B00-99E99D2AE4C7}" ShortID="754444855">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING DIRT_03" ID="{FFD20EC5-8DDA-4DF2-8204-248F8EE94A2F}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.91859553374684"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.09289480106256"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING DIRT_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="527292975"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING DIRT_03" ID="{FFD20EC5-8DDA-4DF2-8204-248F8EE94A2F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dirt_02" ID="{29C02932-761A-4BF9-895C-31D2337D861B}" ShortID="477138581">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING DIRT_03" ID="{9A1776ED-3702-4065-ABA6-4469E8848215}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="10.0166701239511"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.1408252094394"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING DIRT_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="841793571"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING DIRT_03" ID="{9A1776ED-3702-4065-ABA6-4469E8848215}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dirt_03" ID="{2C71E541-CA97-4294-A08A-A53E4CAA3B29}" ShortID="624024503">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING DIRT_03" ID="{FEF45B65-1CFD-41D2-B67D-2A6639C1125F}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="11.0710257109163"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.3375572807759"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING DIRT_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="733004065"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING DIRT_03" ID="{FEF45B65-1CFD-41D2-B67D-2A6639C1125F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dirt_04" ID="{FCEEBEF2-3461-42F7-A437-68CC1982CFE2}" ShortID="387603745">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING DIRT_03" ID="{EEAAECE7-67C8-4BED-AE0B-708730636527}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="14.3537022051082"/>
+												<Property Name="TrimEnd" Type="Real64" Value="14.4766975426335"/>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-2.1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING DIRT_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="767114978"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING DIRT_03" ID="{EEAAECE7-67C8-4BED-AE0B-708730636527}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Stone" ID="{BDE62C6B-9158-4E48-81B2-3EED34644F4D}" ShortID="221915878">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Stone_01" ID="{0DA32570-869E-42A9-ADE8-3779CDB05847}" ShortID="509654319">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1520</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Stone" ID="{DDFAD182-A499-411B-A10F-F42CE145C929}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="26.9339819516117"/>
+												<Property Name="TrimEnd" Type="Real64" Value="27.0608489467987"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Stone.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="719114209"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Stone" ID="{DDFAD182-A499-411B-A10F-F42CE145C929}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Stone_02" ID="{F2FD58E2-1EC9-421E-8CDE-70EB0654F187}" ShortID="721085069">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1580</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Stone" ID="{3210A6F9-70A6-48C4-84E2-7B90172BEE92}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="27.2549327566098"/>
+												<Property Name="TrimEnd" Type="Real64" Value="27.4130953729585"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Stone.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1016522810"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Stone" ID="{3210A6F9-70A6-48C4-84E2-7B90172BEE92}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Stone_03" ID="{3B41CC8D-4C2C-4C77-AAAF-C6ACCC0747C0}" ShortID="1056899915">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1980</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Stone" ID="{313030CA-E077-44DC-9963-8D4B7EE6BB97}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="27.9006572007738"/>
+												<Property Name="TrimEnd" Type="Real64" Value="27.9752480468628"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Stone.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="990657601"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Stone" ID="{313030CA-E077-44DC-9963-8D4B7EE6BB97}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Stone_04" ID="{AB1C7775-9A39-4409-B46E-EE4AD4CE1D95}" ShortID="904332964">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1280</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Stone" ID="{0B5BFB1D-1A3A-4DE5-97F2-CC4C47AC3B7D}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="28.215299311107"/>
+												<Property Name="TrimEnd" Type="Real64" Value="28.3488151987597"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Stone.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="21758511"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Stone" ID="{0B5BFB1D-1A3A-4DE5-97F2-CC4C47AC3B7D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Wood" ID="{F612AC9C-397B-4766-A906-60BECE98E201}" ShortID="887180366">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-1190</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Wood_01" ID="{978D0FBD-23CF-4F03-BA0A-5B1E6F754917}" ShortID="732526665">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING WOOD_01" ID="{36704DD8-D4ED-4539-9155-FE120A5ECC93}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.80962884115587"/>
+												<Property Name="TrimEnd" Type="Real64" Value="6.95708244066715"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING WOOD_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="28439434"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING WOOD_01" ID="{36704DD8-D4ED-4539-9155-FE120A5ECC93}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wood_02" ID="{2B354C92-9072-4E48-A9CE-7DF4F5E2B8D0}" ShortID="459720641">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING WOOD_01" ID="{3F34126A-F217-4964-9AC3-62EA2588901A}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="11.5325009729323"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.7076307086766"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING WOOD_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="500468877"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING WOOD_01" ID="{3F34126A-F217-4964-9AC3-62EA2588901A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wood_03" ID="{B02A2D7D-41CF-48C4-AD6F-1D186114FA02}" ShortID="844284949">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING WOOD_01" ID="{2972C7E9-5D27-4FCD-9892-1EE83CECE652}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="14.1661199124977"/>
+												<Property Name="TrimEnd" Type="Real64" Value="14.3431963496504"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING WOOD_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="131813213"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING WOOD_01" ID="{2972C7E9-5D27-4FCD-9892-1EE83CECE652}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wood_04" ID="{59968ACC-D7A6-41CA-BD17-51C2F77F29D8}" ShortID="272131122">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WALKING WOOD_01" ID="{30B41A81-DF40-4E51-B386-2D72D67100EE}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="21.5307935456306"/>
+												<Property Name="TrimEnd" Type="Real64" Value="21.6997940116516"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>WALKING WOOD_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1053814472"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WALKING WOOD_01" ID="{30B41A81-DF40-4E51-B386-2D72D67100EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Stone" ID="{BDE62C6B-9158-4E48-81B2-3EED34644F4D}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Dirt" ID="{6EBE0789-76C6-4F58-8A5D-CD0370FDB0D7}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Wood" ID="{F612AC9C-397B-4766-A906-60BECE98E201}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{29E1D61A-50E7-4ED7-9A12-C1C6067BC96F}"/>
+								<ItemList>
+									<ItemRef Name="Wood" ID="{F612AC9C-397B-4766-A906-60BECE98E201}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Dirt" ID="{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}"/>
+								<ItemList>
+									<ItemRef Name="Dirt" ID="{6EBE0789-76C6-4F58-8A5D-CD0370FDB0D7}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Stone" ID="{B70758DF-8744-4588-8733-C40AE60B7B56}"/>
+								<ItemList>
+									<ItemRef Name="Stone" ID="{BDE62C6B-9158-4E48-81B2-3EED34644F4D}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
