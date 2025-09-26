@@ -3,7 +3,7 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{DE82E760-4C98-4FE7-9072-8E8B31ADE204}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="Footsteps" ID="{E9CE0F88-821A-4BBE-9B34-E29624F86B3D}">
+				<SoundBank Name="Footsteps" ID="{58905020-2990-47C7-B99A-228062E6A502}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Footsteps" ID="{4C7B7210-CE1B-41C5-BFAA-4BBFECCCFB94}" WorkUnitID="{A2397790-DECC-4E90-9AEB-9A7A60EB244D}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
