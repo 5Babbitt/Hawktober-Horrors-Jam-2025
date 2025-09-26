@@ -203,9 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c2fb8754f509549b6ba8823571609c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Character.CharacterMovement
-  walkSpeed: 3
+  walkSpeed: 2.5
   crouchSpeed: 1.8
-  runSpeed: 6.25
+  runSpeed: 4
   playerGravity: -25
   groundedGravity: -4
   playerPos: {fileID: 11400000, guid: 79d0d026d6e1bb94fb473e24ba7bae76, type: 2}
@@ -261,8 +261,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  playerCanSeeMonster: {fileID: 0}
-  enemyPosition: {fileID: 0}
+  playerCanSeeMonster: {fileID: 11400000, guid: 29489eff00bc23348b40eec70b39deb4, type: 2}
+  enemyPosition: {fileID: 11400000, guid: eca32bcfb546c694ca8cd6f3c60dac51, type: 2}
   lookAngleThreshold: 15
 --- !u!114 &4302476967180238490
 MonoBehaviour:
@@ -281,7 +281,7 @@ MonoBehaviour:
   maxInteractDistance: 2
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
   interactPressed: 0
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &3521347842690565593

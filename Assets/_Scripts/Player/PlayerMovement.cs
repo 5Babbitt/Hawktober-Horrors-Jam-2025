@@ -21,6 +21,11 @@ namespace _Scripts.Player
         [SerializeField] private Vector2Variable lookDelta;
         [SerializeField] private BoolVariable playerCrouched;
 
+        [Header("Sound Settings")] 
+        [SerializeField] private float timeBetweenFootsteps;
+        [SerializeField] private AK.Wwise.Event footstep;
+        private float timeSinceLastStep;
+
         [Header("Debug Values")]
         [SerializeField] private bool isMoving;
         [SerializeField] private bool isRunning;
@@ -93,8 +98,10 @@ namespace _Scripts.Player
         {
             if (isMoving && characterController.isGrounded)
             {
-                if (isCrouching) HandleCrouching();
-                else HandleStanding();
+                if (isCrouching) HandleCrouchedMovement();
+                else HandleStandingMovement();
+
+                FootstepsUpdate(isCrouching);
             }
 
             Vector3 lateral = Vector3.ProjectOnPlane(transform.right, Vector3.up); // left/right
@@ -113,14 +120,24 @@ namespace _Scripts.Player
                 velocity.y += playerGravity * Time.deltaTime;
         }
 
-        private void HandleStanding()
+        private void HandleStandingMovement()
         {
             moveSpeed = isRunning ? runSpeed : walkSpeed;
         }
 
-        private void HandleCrouching()
+        private void HandleCrouchedMovement()
         {
             moveSpeed = crouchSpeed;
+        }
+
+        private void FootstepsUpdate(bool crouching)
+        {
+            timeSinceLastStep += Time.deltaTime;
+            if (timeSinceLastStep > timeBetweenFootsteps)
+            {
+                footstep.Post(gameObject);
+                timeSinceLastStep = 0;
+            }
         }
 
         private void OnMove(InputAction.CallbackContext context)
