@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.audiokinetic.wwise.addressables": "https://github.com/audiokinetic/WwiseUnityAddressables.git#v24.1.8",
     "com.unity.ai.navigation": "2.0.9",
     "com.unity.animation.rigging": "1.3.0",
     "com.unity.collab-proxy": "2.9.3",
