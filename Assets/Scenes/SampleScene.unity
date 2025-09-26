@@ -596,7 +596,8 @@ GameObject:
   - component: {fileID: 184054260}
   - component: {fileID: 184054262}
   - component: {fileID: 184054261}
-  m_Layer: 0
+  - component: {fileID: 184054263}
+  m_Layer: 7
   m_Name: Terrain_(0.00, 0.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,6 +679,24 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &184054263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184054259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470d7827d535fff4d81e068e4e8bc3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Audio.SoundMaterial
+  <Material>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b753ea9e963a66468317a784c29f6cf, type: 2}
 --- !u!1 &321800278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1799,8 @@ GameObject:
   - component: {fileID: 660250753}
   - component: {fileID: 660250755}
   - component: {fileID: 660250754}
-  m_Layer: 0
+  - component: {fileID: 660250756}
+  m_Layer: 7
   m_Name: Terrain_(-1000.00, 0.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1862,6 +1882,24 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &660250756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660250752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470d7827d535fff4d81e068e4e8bc3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Audio.SoundMaterial
+  <Material>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b753ea9e963a66468317a784c29f6cf, type: 2}
 --- !u!1 &678945527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2252,7 @@ GameObject:
   - component: {fileID: 761210384}
   - component: {fileID: 761210383}
   - component: {fileID: 761210382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2493,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6cc12dc8286831a4fbdce6bde11948c4, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 0a82213ee71634444b38544a6bc238cf, type: 2}
   decodeBank: 0
   overrideLoadSetting: 0
   loadAsynchronous: 0
@@ -2587,7 +2625,8 @@ GameObject:
   - component: {fileID: 964312541}
   - component: {fileID: 964312543}
   - component: {fileID: 964312542}
-  m_Layer: 0
+  - component: {fileID: 964312544}
+  m_Layer: 7
   m_Name: Terrain_(-1000.00, 0.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2669,6 +2708,24 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &964312544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964312540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470d7827d535fff4d81e068e4e8bc3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Audio.SoundMaterial
+  <Material>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b753ea9e963a66468317a784c29f6cf, type: 2}
 --- !u!1 &1027423454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1187100459}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3339,6 +3396,37 @@ Transform:
   - {fileID: 660250753}
   - {fileID: 184054260}
   m_Father: {fileID: 542241774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1249398276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249398277}
+  m_Layer: 3
+  m_Name: SoundMaterialGroundDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1249398277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249398276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1498446513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299059065
 GameObject:
@@ -5131,7 +5219,7 @@ GameObject:
   - component: {fileID: 1460329091}
   - component: {fileID: 1460329090}
   - component: {fileID: 1460329089}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: TestDoor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,6 +5406,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498446506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
+  m_PrefabInstance: {fileID: 1565669826540748043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1498446513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
+  m_PrefabInstance: {fileID: 1565669826540748043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1498446514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498446506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced644208a3d4f978e7c2d7034b792b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Player.PlayerAudioInteractor
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  detectionDistance: 1.1
+  detectionPoint: {fileID: 1249398277}
 --- !u!1001 &1526268296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5774,7 +5889,8 @@ GameObject:
   - component: {fileID: 1917433151}
   - component: {fileID: 1917433153}
   - component: {fileID: 1917433152}
-  m_Layer: 0
+  - component: {fileID: 1917433154}
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5856,6 +5972,24 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &1917433154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917433150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470d7827d535fff4d81e068e4e8bc3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Audio.SoundMaterial
+  <Material>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b753ea9e963a66468317a784c29f6cf, type: 2}
 --- !u!1 &1934600432
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,7 +6500,7 @@ GameObject:
   - component: {fileID: 2053566425}
   - component: {fileID: 2053566424}
   - component: {fileID: 2053566423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6498,7 +6632,7 @@ GameObject:
   - component: {fileID: 2064371715}
   - component: {fileID: 2064371714}
   - component: {fileID: 2064371720}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: TestDoor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6657,7 +6791,7 @@ Transform:
   m_GameObject: {fileID: 2064371713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.68, y: -0.02, z: 1.43}
+  m_LocalPosition: {x: 9.704, y: -0.005, z: 1.42}
   m_LocalScale: {x: 1, y: 1.12, z: 1.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6780,7 +6914,7 @@ GameObject:
   - component: {fileID: 3469287837269186555}
   - component: {fileID: 3469287837269186554}
   - component: {fileID: 3469287837269186556}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: TestDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6797,7 +6931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2844714193329950706, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
       propertyPath: timeBetweenFootsteps
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2844714193329950706, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
       propertyPath: footstep.WwiseObjectReference
@@ -6807,6 +6941,10 @@ PrefabInstance:
       propertyPath: footstepSwitch.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 9da9b91afcdd196448464fea9fe7f8f8, type: 2}
+    - target: {fileID: 4302476967180238490, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
+      propertyPath: interactableLayers.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.12
@@ -6853,8 +6991,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249398277}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1498446514}
   m_SourcePrefab: {fileID: 100100000, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
 --- !u!23 &1711813855422948146
 MeshRenderer:

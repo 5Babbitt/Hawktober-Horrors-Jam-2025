@@ -60,8 +60,6 @@ namespace _Scripts.Player
 
         private void OnDrawGizmos()
         {
-            if (!Application.isPlaying) return;
-        
             Vector3 rayOrigin = !detectionPoint ? detectionPoint.position : transform.position;
         
             Gizmos.color = !currentSoundMaterial ? Color.green : Color.red;

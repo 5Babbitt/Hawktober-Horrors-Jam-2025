@@ -151,7 +151,7 @@ Material:
     - _Texture_Size: 512
     - _VertexResolution: 16
     - _VertexSnapping: 64
-    - _Vertex_Resolution: 512
+    - _Vertex_Resolution: 256
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
