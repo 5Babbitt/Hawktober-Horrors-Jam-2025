@@ -56,7 +56,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Smoothness: 0.746
-    - _Vertex_Resolution: 64
+    - _Vertex_Resolution: 16
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
