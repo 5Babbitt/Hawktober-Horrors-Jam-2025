@@ -15,6 +15,11 @@
 						<Switch Name="Ambience_Tower" ID="{E388D77A-C731-410F-A299-99F952E251BB}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Stingers" ID="{A2809465-0C12-4B9C-882A-7503ED0922E9}">
+					<ChildrenList>
+						<Switch Name="Floor_Creak" ID="{D922AEC8-F304-4ECD-ADC4-AA3DA2C2C75F}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

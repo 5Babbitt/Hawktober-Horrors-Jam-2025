@@ -1,16 +1,22 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1017660616	Ambiences			\Default Work Unit\Ambiences	
 	2385628198	Footsteps			\Default Work Unit\Footsteps	
+	2940432316	Stingers			\Default Work Unit\Stingers	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	1017660616	Ambiences			\Default Work Unit\Ambiences	
 	2385628198	Footsteps			\Default Work Unit\Footsteps	
+	2940432316	Stingers			\Default Work Unit\Stingers	
 
 Switch	ID	Name	Switch Group			Notes
 	1207173179	Ambience_Tower	Ambiences			
 	1216965916	Stone	Footsteps			
 	2058049674	Wood	Footsteps			
 	2195636714	Dirt	Footsteps			
+	2811188008	Floor_Creak	Stingers			
+
+Effect plug-ins	ID	Name	Type				Notes
+	3191103210	New_Matrix_Reverb	Wwise Matrix Reverb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	21758511	Stone_04	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\CB\{CBFC3D9F-5B1D-7C35-7A3D-99B9385AECC0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Stone\Stone_04		12930
