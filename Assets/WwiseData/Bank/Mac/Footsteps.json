@@ -1,0 +1,227 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "2385628198",
+    "Type": "User",
+    "GUID": "{58905020-2990-47C7-B99A-228062E6A502}",
+    "Language": "SFX",
+    "Hash": "{742CFD74-CF25-9F70-9E0E-885CB40684FB}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Footsteps",
+    "ShortName": "Footsteps",
+    "Path": "Footsteps.bnk",
+    "Media": [
+     {
+      "Id": "21758511",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Stone.wav",
+      "CachePath": "55/{55F27A86-BBCC-725A-7E83-1D4A89EBF628}.wem"
+     },
+     {
+      "Id": "28439434",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING WOOD_01.wav",
+      "CachePath": "36/{36375161-9148-9B18-C31F-A757A9EDB101}.wem"
+     },
+     {
+      "Id": "131813213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING WOOD_01.wav",
+      "CachePath": "1D/{1D8CF77B-B77E-5FC0-F6EA-7675204371D4}.wem"
+     },
+     {
+      "Id": "500468877",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING WOOD_01.wav",
+      "CachePath": "C5/{C5E56FFD-E0CD-14C3-0FCD-B2E985CA22A0}.wem"
+     },
+     {
+      "Id": "527292975",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING DIRT_03.wav",
+      "CachePath": "61/{61E63ED1-9C03-6DB5-7C35-BB298068F316}.wem"
+     },
+     {
+      "Id": "719114209",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Stone.wav",
+      "CachePath": "39/{39FE3338-85E3-80E2-C3FF-4D0E38B8A92E}.wem"
+     },
+     {
+      "Id": "733004065",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING DIRT_03.wav",
+      "CachePath": "A7/{A7EF03ED-2EFE-B9F2-9B93-3F2F9202E522}.wem"
+     },
+     {
+      "Id": "767114978",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING DIRT_03.wav",
+      "CachePath": "CA/{CA126DB1-D7DB-E216-BA8E-41CCEA1A2DC1}.wem"
+     },
+     {
+      "Id": "841793571",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING DIRT_03.wav",
+      "CachePath": "81/{81B4F438-36FF-2265-E955-C42AF360AE1B}.wem"
+     },
+     {
+      "Id": "990657601",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Stone.wav",
+      "CachePath": "45/{45AE0A59-F623-1EBE-F93A-A5AA9FA89E84}.wem"
+     },
+     {
+      "Id": "1016522810",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Stone.wav",
+      "CachePath": "6D/{6D943C04-8720-02C2-AFA0-B9647AB09E21}.wem"
+     },
+     {
+      "Id": "1053814472",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WALKING WOOD_01.wav",
+      "CachePath": "BD/{BDF4452F-E3B6-037D-2328-40EFBB70877D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Footsteps",
+      "GUID": "{4C7B7210-CE1B-41C5-BFAA-4BBFECCCFB94}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12299534",
+      "DurationMax": "0.39396718",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "2058049674",
+         "GUID": "{29E1D61A-50E7-4ED7-9A12-C1C6067BC96F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "28439434"
+         },
+         {
+          "Id": "131813213"
+         },
+         {
+          "Id": "500468877"
+         },
+         {
+          "Id": "1053814472"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "2195636714",
+         "GUID": "{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "527292975"
+         },
+         {
+          "Id": "733004065"
+         },
+         {
+          "Id": "767114978"
+         },
+         {
+          "Id": "841793571"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "1216965916",
+         "GUID": "{B70758DF-8744-4588-8733-C40AE60B7B56}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "21758511"
+         },
+         {
+          "Id": "719114209"
+         },
+         {
+          "Id": "990657601"
+         },
+         {
+          "Id": "1016522810"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps",
+      "GUID": "{F478BFC0-3344-48A1-8CE4-90A7CA861F9A}",
+      "Switches": [
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps\\Stone",
+        "GUID": "{B70758DF-8744-4588-8733-C40AE60B7B56}"
+       },
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps\\Wood",
+        "GUID": "{29E1D61A-50E7-4ED7-9A12-C1C6067BC96F}"
+       },
+       {
+        "Id": "2195636714",
+        "Name": "Dirt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps\\Dirt",
+        "GUID": "{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{8B25DED2-6047-7940-F387-0EA8FC7F87EB}"
+ }
+}
