@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMBIENCES = 1017660616U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
+        static const AkUniqueID STINGERS = 2940432316U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -40,6 +41,16 @@ namespace AK
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace FOOTSTEPS
+
+        namespace STINGERS
+        {
+            static const AkUniqueID GROUP = 2940432316U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FLOOR_CREAK = 2811188008U;
+            } // namespace SWITCH
+        } // namespace STINGERS
 
     } // namespace SWITCHES
 
