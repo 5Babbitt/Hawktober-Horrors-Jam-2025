@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9E8D32AB-5B73-429E-84D1-ACDA9B6E8EF5}",
     "Language": "SFX",
-    "Hash": "{19BD7BFC-C952-8E4D-C260-E4AF991FAEBA}",
+    "Hash": "{CA04AC79-6835-EDB9-A8B7-592D6AEFFC17}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -54,6 +54,14 @@
       "Location": "Memory",
       "ShortName": "WALKING DIRT_03.wav",
       "CachePath": "95/{95ED30E8-46A9-9BE7-ED06-06475E06980F}.wem"
+     },
+     {
+      "Id": "589837988",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ambience_Tower.wav",
+      "CachePath": "11/{1145AB78-64BA-F811-5978-94CDAE611004}.wem"
      },
      {
       "Id": "719114209",
@@ -113,6 +121,18 @@
      }
     ],
     "Events": [
+     {
+      "Id": "1017660616",
+      "Name": "Ambiences",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ambiences",
+      "GUID": "{10214C14-4611-4975-9074-27A410545B7A}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "589837988"
+       }
+      ]
+     },
      {
       "Id": "2385628198",
       "Name": "Footsteps",
@@ -236,6 +256,6 @@
     ]
    }
   ],
-  "FileHash": "{94387425-45D6-6685-56E4-6FCEF3817706}"
+  "FileHash": "{F7A0DCDB-E7E6-AC82-3618-DB0936AA6BD8}"
  }
 }
