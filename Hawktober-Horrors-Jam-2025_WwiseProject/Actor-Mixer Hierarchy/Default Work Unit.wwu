@@ -608,6 +608,225 @@
 						</GroupingBehaviorList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<SwitchContainer Name="Stingers" ID="{003E88BB-82CC-4062-897B-4F779C8DDA6D}" ShortID="425594976">
+					<PropertyList>
+						<Property Name="3DPosition" Type="int16" Value="1"/>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Floor_Creak" ID="{D922AEC8-F304-4ECD-ADC4-AA3DA2C2C75F}" WorkUnitID="{D982C0D6-DC9B-446F-B4AB-1BC6A9E8A5DD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Stingers" ID="{A2809465-0C12-4B9C-882A-7503ED0922E9}" WorkUnitID="{D982C0D6-DC9B-446F-B4AB-1BC6A9E8A5DD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Floor_Creak" ID="{EFAB309E-EAB0-4AC8-A236-130B3A2161CD}" ShortID="904045227">
+							<PropertyList>
+								<Property Name="3DPosition" Type="int16" Value="1"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-800</Value>
+									</ValueList>
+								</Property>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="45"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C42109A9-E9D5-4616-AD32-A2E33C5243CB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="4"/>
+													<Property Name="Min" Type="Real64" Value="-8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bluezone_BC0254_wood_creaking_tree_005" ID="{515959E3-C3C1-4F61-8DEE-9FD166762F46}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.53748248487291"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="2.06068544034839"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.48750890402576"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bluezone_BC0254_wood_creaking_tree_005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="678741205"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{EDB46FDC-170D-4835-83DE-674BD0BD0EB2}">
+									<ChildrenList>
+										<Path2D Name="Floor_Creak_Path" ID="{6FBF0487-02DB-4274-BB1A-79CCE85CFE99}">
+											<PointList>
+												<Point>
+													<XPos>50.25381</XPos>
+													<YPos>54.51977</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="Floor_Creak_Path_01" ID="{DEA9DB3C-DB0B-403C-99AA-3555778C541D}">
+											<PointList>
+												<Point>
+													<XPos>-53.29949</XPos>
+													<YPos>55.64972</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="Floor_Creak_Path_02" ID="{00A31305-7F37-4178-8375-451959D8A63B}">
+											<PointList>
+												<Point>
+													<XPos>-46.70051</XPos>
+													<YPos>-48.87006</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+										<Path2D Name="Floor_Creak_Path_03" ID="{484A0439-64F7-491B-9E0A-A4B693DB0915}">
+											<PointList>
+												<Point>
+													<XPos>55.32995</XPos>
+													<YPos>-56.21469</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+									</ChildrenList>
+								</Position>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Bluezone_BC0254_wood_creaking_tree_005" ID="{515959E3-C3C1-4F61-8DEE-9FD166762F46}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{4F30C8F1-EF07-438E-926C-C36A79D0F916}">
+							<PropertyList>
+								<Property Name="PanX" Type="Real64" Value="55.9865092748736"/>
+								<Property Name="PanY" Type="Real64" Value="-38.1555153707052"/>
+							</PropertyList>
+						</Panner>
+						<Position Name="" ID="{7AFC37CE-DFDF-471B-B8F5-D30048957416}">
+							<PropertyList>
+								<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+							</PropertyList>
+							<ChildrenList>
+								<Path2D Name="Stingers_Path" ID="{D58CD01D-058E-4AC6-B8E8-9DA304EE7A66}">
+									<PointList>
+										<Point>
+											<XPos>-36.04061</XPos>
+											<YPos>40.96045</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Stingers_Path_01" ID="{335482CC-B861-413C-8998-1DC7DF883BFB}">
+									<PointList>
+										<Point>
+											<XPos>30.45686</XPos>
+											<YPos>31.35593</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Stingers_Path_02" ID="{2A364BB6-AE4A-45D2-8ED2-623ED8ADE615}">
+									<PropertyList>
+										<Property Name="Duration" Type="Uint32" Value="1615"/>
+									</PropertyList>
+									<PointList>
+										<Point>
+											<XPos>-31.9797</XPos>
+											<YPos>-24.0113</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Stingers_Path_03" ID="{77341C53-2DE7-44FB-97A0-A3DCF00E42B5}">
+									<PointList>
+										<Point>
+											<XPos>24.8731</XPos>
+											<YPos>-23.44633</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+							</ChildrenList>
+						</Position>
+					</PositioningInfo>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{13126A7B-53BC-48F3-8864-839FA9C3E489}" ShortID="292124696">
+										<ReferenceList/>
+									</EffectSlot>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{EA6BD3D8-BE0D-4838-8431-5E8981AF164F}" ShortID="124337011">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+												<ObjectRef Name="New_Matrix_Reverb" ID="{AFC48E74-EE7F-412F-90E8-9EE7502AFB43}" WorkUnitID="{18964303-91E3-4F5A-9EF5-D3457A596D99}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Floor_Creak" ID="{EFAB309E-EAB0-4AC8-A236-130B3A2161CD}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

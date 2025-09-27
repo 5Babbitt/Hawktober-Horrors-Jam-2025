@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{E8C73C05-9AC5-A17E-EA11-491BBCB2A45E}",
+    "Hash": "{30C67380-9EB6-5866-525F-08C0C2D487D5}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -82,10 +82,24 @@
         "GUID": "{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}"
        }
       ]
+     },
+     {
+      "Id": "2940432316",
+      "Name": "Stingers",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Stingers",
+      "GUID": "{A2809465-0C12-4B9C-882A-7503ED0922E9}",
+      "Switches": [
+       {
+        "Id": "2811188008",
+        "Name": "Floor_Creak",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Stingers\\Floor_Creak",
+        "GUID": "{D922AEC8-F304-4ECD-ADC4-AA3DA2C2C75F}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{44E93894-DB2E-CE1C-8EEA-B3ACB655F48D}"
+  "FileHash": "{DD092967-D4FF-D3EF-1E34-77E40991523F}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9E8D32AB-5B73-429E-84D1-ACDA9B6E8EF5}",
     "Language": "SFX",
-    "Hash": "{CA04AC79-6835-EDB9-A8B7-592D6AEFFC17}",
+    "Hash": "{3116BC23-DF8C-003C-453F-E8FDBC3265C7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -120,6 +120,18 @@
       "CachePath": "5E/{5EC6F977-0B22-128B-E069-8FD51C06230E}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3191103210",
+       "Name": "New_Matrix_Reverb",
+       "ObjectPath": "\\Effects\\Default Work Unit\\New_Matrix_Reverb",
+       "GUID": "{AFC48E74-EE7F-412F-90E8-9EE7502AFB43}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "1017660616",
@@ -210,6 +222,22 @@
         ]
        }
       ]
+     },
+     {
+      "Id": "2940432316",
+      "Name": "Stingers",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stingers",
+      "GUID": "{B3E179FB-814C-4529-A8C6-A4926832D5AA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3191103210"
+        }
+       ]
+      }
      }
     ],
     "SwitchGroups": [
@@ -252,10 +280,24 @@
         "GUID": "{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}"
        }
       ]
+     },
+     {
+      "Id": "2940432316",
+      "Name": "Stingers",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Stingers",
+      "GUID": "{A2809465-0C12-4B9C-882A-7503ED0922E9}",
+      "Switches": [
+       {
+        "Id": "2811188008",
+        "Name": "Floor_Creak",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Stingers\\Floor_Creak",
+        "GUID": "{D922AEC8-F304-4ECD-ADC4-AA3DA2C2C75F}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{A9E468DF-969E-E3C3-B390-0D7B14E9B5EC}"
+  "FileHash": "{C6A2729C-17B8-400A-B370-A1680F40D96A}"
  }
 }

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{18964303-91E3-4F5A-9EF5-D3457A596D99}" SchemaVersion="123">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{18964303-91E3-4F5A-9EF5-D3457A596D99}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{18964303-91E3-4F5A-9EF5-D3457A596D99}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_Matrix_Reverb" ID="{AFC48E74-EE7F-412F-90E8-9EE7502AFB43}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+					<PropertyList>
+						<Property Name="NumberOfDelays" Type="int32" Value="12"/>
+						<Property Name="ReverbTime" Type="Real32" Value="0.8"/>
+						<Property Name="WetLevel" Type="Real32" Value="-24"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>
