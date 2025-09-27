@@ -2428,6 +2428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834350620}
   - component: {fileID: 834350619}
+  - component: {fileID: 834350621}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2475,6 +2476,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834350621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834350617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462fb324bed3e654fa17cfe72ad6941e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1d8db92afc7720a43a8953dd03c9c40e, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &961457906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,31 +5433,6 @@ MonoBehaviour:
     m_Bits: 128
   detectionDistance: 1.1
   detectionPoint: {fileID: 1249398277}
---- !u!114 &1498446515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498446506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462fb324bed3e654fa17cfe72ad6941e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0a82213ee71634444b38544a6bc238cf, type: 2}
-  decodeBank: 0
-  overrideLoadSetting: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!1001 &1526268296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6998,9 +6999,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1498446514}
-    - targetCorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1498446515}
   m_SourcePrefab: {fileID: 100100000, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
 --- !u!23 &1711813855422948146
 MeshRenderer:
