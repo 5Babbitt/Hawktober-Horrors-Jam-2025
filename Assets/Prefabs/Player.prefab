@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 1406843928146623514}
   - component: {fileID: 4302476967180238490}
   - component: {fileID: 3521347842690565593}
+  - component: {fileID: 4045176847717304742}
   - component: {fileID: 3336559764831603472}
   m_Layer: 3
   m_Name: Player
@@ -164,6 +165,7 @@ Transform:
   m_Children:
   - {fileID: 6398439275056573468}
   - {fileID: 890512998933569225}
+  - {fileID: 1431195614778955056}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2140721323659157890
@@ -211,6 +213,11 @@ MonoBehaviour:
   playerPos: {fileID: 11400000, guid: 79d0d026d6e1bb94fb473e24ba7bae76, type: 2}
   lookDelta: {fileID: 11400000, guid: 25df716f4f208fd45a40a6f5562fd347, type: 2}
   playerCrouched: {fileID: 11400000, guid: 57cf19d8cb0c78c40a226236b2d582e0, type: 2}
+  timeBetweenFootsteps: 0.5
+  footstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d416527713697144095c94807b9a0a79, type: 2}
   isMoving: 0
   isRunning: 0
   isCrouching: 0
@@ -281,7 +288,7 @@ MonoBehaviour:
   maxInteractDistance: 2
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   interactPressed: 0
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &3521347842690565593
@@ -309,6 +316,33 @@ MonoBehaviour:
   maxRecharge: 0.375
   minRecharge: 0.3
   lampAction: {fileID: 3208897652535869723, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &4045176847717304742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772349662646423910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced644208a3d4f978e7c2d7034b792b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Player.PlayerAudioInteractor
+  ambience:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4092d3e6730c98c499454f13283faad1, type: 2}
+  ambienceSwitch:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e0db5cc9b8e80f24a9934b4c80a92088, type: 2}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  detectionDistance: 1.1
+  detectionPoint: {fileID: 1431195614778955056}
 --- !u!114 &3336559764831603472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +592,37 @@ MonoBehaviour:
         DecelTime: 0.2
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!1 &9219329895778897934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431195614778955056}
+  m_Layer: 3
+  m_Name: SoundMaterialGroundDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431195614778955056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219329895778897934}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5060146296211654550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8876856859461784396
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Ambience_Tower
   id: 1207173179
   guid: E388D77A-C731-410F-A299-99F952E251BB
-  WwiseSwitchGroupReference: {fileID: 0}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 0078e413fae5b3942b04af3f16d8a321, type: 2}

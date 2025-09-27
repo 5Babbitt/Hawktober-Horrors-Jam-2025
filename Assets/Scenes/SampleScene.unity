@@ -3397,37 +3397,6 @@ Transform:
   - {fileID: 184054260}
   m_Father: {fileID: 542241774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1249398276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1249398277}
-  m_Layer: 3
-  m_Name: SoundMaterialGroundDetection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1249398277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249398276}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1498446513}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299059065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,33 +5375,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1498446506 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-  m_PrefabInstance: {fileID: 1565669826540748043}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1498446513 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-  m_PrefabInstance: {fileID: 1565669826540748043}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1498446514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498446506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ced644208a3d4f978e7c2d7034b792b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Player.PlayerAudioInteractor
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  detectionDistance: 1.1
-  detectionPoint: {fileID: 1249398277}
 --- !u!1001 &1526268296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6929,22 +6871,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2844714193329950706, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      propertyPath: timeBetweenFootsteps
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2844714193329950706, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      propertyPath: footstep.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: d416527713697144095c94807b9a0a79, type: 2}
-    - target: {fileID: 2844714193329950706, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      propertyPath: footstepSwitch.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 9da9b91afcdd196448464fea9fe7f8f8, type: 2}
-    - target: {fileID: 4302476967180238490, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      propertyPath: interactableLayers.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.12
@@ -6991,14 +6917,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5060146296211654550, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1249398277}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6772349662646423910, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1498446514}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3ae41b261396ab4899cc7adab3a6c75, type: 3}
 --- !u!23 &1711813855422948146
 MeshRenderer:
