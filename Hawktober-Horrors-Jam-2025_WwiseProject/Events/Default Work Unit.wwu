@@ -30,7 +30,7 @@
 						<Action Name="" ID="{BFF4E9A4-B8D5-42A9-A543-AAA1FB97B24B}" ShortID="300696643">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Stingers" ID="{003E88BB-82CC-4062-897B-4F779C8DDA6D}" WorkUnitID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}"/>
+									<ObjectRef Name="Floor_Creak" ID="{EFAB309E-EAB0-4AC8-A236-130B3A2161CD}" WorkUnitID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

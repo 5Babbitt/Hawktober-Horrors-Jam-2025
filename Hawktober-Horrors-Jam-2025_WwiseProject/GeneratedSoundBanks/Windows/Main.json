@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9E8D32AB-5B73-429E-84D1-ACDA9B6E8EF5}",
     "Language": "SFX",
-    "Hash": "{3116BC23-DF8C-003C-453F-E8FDBC3265C7}",
+    "Hash": "{0D451774-C7AA-4E8D-9079-5F58441D5760}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -62,6 +62,14 @@
       "Location": "Memory",
       "ShortName": "Ambience_Tower.wav",
       "CachePath": "11/{1145AB78-64BA-F811-5978-94CDAE611004}.wem"
+     },
+     {
+      "Id": "678741205",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bluezone_BC0254_wood_creaking_tree_005.wav",
+      "CachePath": "E2/{E2B326DD-E1F8-FA4D-7DA3-C6D1ADAF123C}.wem"
      },
      {
       "Id": "719114209",
@@ -229,8 +237,13 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Stingers",
       "GUID": "{B3E179FB-814C-4529-A8C6-A4926832D5AA}",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0",
+      "DurationMin": "3.9486744",
+      "DurationMax": "3.9486744",
+      "MediaRefs": [
+       {
+        "Id": "678741205"
+       }
+      ],
       "PluginRefs": {
        "ShareSets": [
         {
@@ -298,6 +311,6 @@
     ]
    }
   ],
-  "FileHash": "{C6A2729C-17B8-400A-B370-A1680F40D96A}"
+  "FileHash": "{7CE70A46-7622-F6FC-121F-01F2BE039461}"
  }
 }

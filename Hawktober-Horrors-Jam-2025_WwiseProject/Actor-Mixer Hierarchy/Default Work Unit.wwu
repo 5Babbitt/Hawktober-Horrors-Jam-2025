@@ -606,6 +606,14 @@
 								<ItemRef Name="Ambience_Tower" ID="{37330B1A-AF68-4E32-AE13-2B1864888D3A}"/>
 							</GroupingBehavior>
 						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Ambience_Tower" ID="{E388D77A-C731-410F-A299-99F952E251BB}"/>
+								<ItemList>
+									<ItemRef Name="Ambience_Tower" ID="{37330B1A-AF68-4E32-AE13-2B1864888D3A}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
 				<SwitchContainer Name="Stingers" ID="{003E88BB-82CC-4062-897B-4F779C8DDA6D}" ShortID="425594976">
@@ -646,7 +654,8 @@
 										<Value>-800</Value>
 									</ValueList>
 								</Property>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="45"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="51"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-12</Value>
@@ -688,6 +697,7 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<PositioningInfo>
+								<Panner Name="" ID="{5B3740A2-E78D-4F47-98FC-F56FE903940F}"/>
 								<Position Name="" ID="{EDB46FDC-170D-4835-83DE-674BD0BD0EB2}">
 									<ChildrenList>
 										<Path2D Name="Floor_Creak_Path" ID="{6FBF0487-02DB-4274-BB1A-79CCE85CFE99}">
@@ -801,9 +811,7 @@
 						<ObjectList Name="Effects">
 							<Reference>
 								<Local>
-									<EffectSlot Name="" ID="{13126A7B-53BC-48F3-8864-839FA9C3E489}" ShortID="292124696">
-										<ReferenceList/>
-									</EffectSlot>
+									<EffectSlot Name="" ID="{13126A7B-53BC-48F3-8864-839FA9C3E489}" ShortID="292124696"/>
 								</Local>
 							</Reference>
 							<Reference>
@@ -825,6 +833,14 @@
 								<ItemRef Name="Floor_Creak" ID="{EFAB309E-EAB0-4AC8-A236-130B3A2161CD}"/>
 							</GroupingBehavior>
 						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Floor_Creak" ID="{D922AEC8-F304-4ECD-ADC4-AA3DA2C2C75F}"/>
+								<ItemList>
+									<ItemRef Name="Floor_Creak" ID="{EFAB309E-EAB0-4AC8-A236-130B3A2161CD}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
 			</ChildrenList>
