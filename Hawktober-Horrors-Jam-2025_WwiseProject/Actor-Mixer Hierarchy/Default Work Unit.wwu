@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}" PersistMode="Standalone">
 			<ChildrenList>
 				<SwitchContainer Name="Footsteps" ID="{CCE838F4-9821-46D9-B930-2CFEFC8F4A16}" ShortID="228624766">
+					<PropertyList>
+						<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
@@ -21,6 +24,21 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="Dirt" ID="{6EBE0789-76C6-4F58-8A5D-CD0370FDB0D7}" ShortID="785660584">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>41</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{521784A6-90F7-477B-BCAF-8B9167A78B7F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="9"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>9</Value>
@@ -153,9 +171,34 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Stone" ID="{BDE62C6B-9158-4E48-81B2-3EED34644F4D}" ShortID="221915878">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>33</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>55</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D5AAD823-6B15-40D8-8095-1E5AE8496CE8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-910</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -308,14 +351,30 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Wood" ID="{F612AC9C-397B-4766-A906-60BECE98E201}" ShortID="887180366">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>48</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E1FEA5C4-EF51-4DD9-B215-DACDE4F621D3}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-1190</Value>
+										<Value>-1290</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -471,6 +530,78 @@
 								</ItemList>
 							</Grouping>
 						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="Ambience" ID="{2318D560-1233-4DB7-BBF4-1024791D3C33}" ShortID="291543674">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Ambience_Tower" ID="{E388D77A-C731-410F-A299-99F952E251BB}" WorkUnitID="{D982C0D6-DC9B-446F-B4AB-1BC6A9E8A5DD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Ambiences" ID="{25A5BA37-980A-4D23-900B-265FDC9CCC90}" WorkUnitID="{D982C0D6-DC9B-446F-B4AB-1BC6A9E8A5DD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Ambience_Tower" ID="{37330B1A-AF68-4E32-AE13-2B1864888D3A}" ShortID="278539795">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{EA2974AE-3614-49AC-8601-EDE75A7DC1EA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-150"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F24E6937-1DCC-4A3D-A08E-1FE72430E3A4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3A1371F4-11FF-4507-A1A3-D566F9E1456A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambience_Tower" ID="{3B5700F5-7317-46AF-A248-58C636A46ACD}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="5.97510373443983"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="14.1632088520055"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Ambience_Tower.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="589837988"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambience_Tower" ID="{3B5700F5-7317-46AF-A248-58C636A46ACD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Ambience_Tower" ID="{37330B1A-AF68-4E32-AE13-2B1864888D3A}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
 					</GroupingInfo>
 				</SwitchContainer>
 			</ChildrenList>

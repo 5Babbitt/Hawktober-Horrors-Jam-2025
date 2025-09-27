@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	1216965916	Stone	Footsteps			
+	2058049674	Wood	Footsteps			
+	2195636714	Dirt	Footsteps			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	21758511	Stone_04	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\55\{55F27A86-BBCC-725A-7E83-1D4A89EBF628}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Stone\Stone_04		12914
+	28439434	Wood_01	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\36\{36375161-9148-9B18-C31F-A757A9EDB101}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood_01		14252
+	131813213	Wood_03	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\1D\{1D8CF77B-B77E-5FC0-F6EA-7675204371D4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood_03		17094
+	500468877	Wood_02	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\C5\{C5E56FFD-E0CD-14C3-0FCD-B2E985CA22A0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood_02		16908
+	527292975	Dirt_01	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\61\{61E63ED1-9C03-6DB5-7C35-BB298068F316}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt_01		16828
+	719114209	Stone_01	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\39\{39FE3338-85E3-80E2-C3FF-4D0E38B8A92E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Stone\Stone_01		12276
+	733004065	Dirt_03	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\A7\{A7EF03ED-2EFE-B9F2-9B93-3F2F9202E522}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt_03		25684
+	767114978	Dirt_04	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\CA\{CA126DB1-D7DB-E216-BA8E-41CCEA1A2DC1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt_04		11902
+	841793571	Dirt_02	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\81\{81B4F438-36FF-2265-E955-C42AF360AE1B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt_02		12016
+	990657601	Stone_03	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\45\{45AE0A59-F623-1EBE-F93A-A5AA9FA89E84}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Stone\Stone_03		7256
+	1016522810	Stone_02	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\6D\{6D943C04-8720-02C2-AFA0-B9647AB09E21}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Stone\Stone_02		15278
+	1053814472	Wood_04	E:\Hawktober-Horrors-Jam-2025\Hawktober-Horrors-Jam-2025_WwiseProject\.cache\BD\{BDF4452F-E3B6-037D-2328-40EFBB70877D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood_04		16320
+

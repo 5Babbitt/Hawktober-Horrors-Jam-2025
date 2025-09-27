@@ -18,6 +18,16 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace AMBIENCES
+        {
+            static const AkUniqueID GROUP = 1017660616U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID AMBIENCE_TOWER = 1207173179U;
+            } // namespace SWITCH
+        } // namespace AMBIENCES
+
         namespace FOOTSTEPS
         {
             static const AkUniqueID GROUP = 2385628198U;
@@ -35,7 +45,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID FOOTSTEPS = 2385628198U;
+        static const AkUniqueID MAIN = 3161908922U;
     } // namespace BANKS
 
     namespace BUSSES

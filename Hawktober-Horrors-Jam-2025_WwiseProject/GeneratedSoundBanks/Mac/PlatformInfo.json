@@ -10,7 +10,7 @@
    "SourceFilesRoot": "../../.cache",
    "SoundBanksRoot": ".",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "."
+   "ExternalSourcesOutputRoot": "../../../Assets/GeneratedSoundBanks/Mac"
   },
   "DefaultAlign": "16",
   "Settings": {
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{BE0F4FC3-C6F5-9813-D1FD-20139C728BE2}"
+  "FileHash": "{FB00FDFF-37A1-363D-C9C6-78C575E8391A}"
  }
 }

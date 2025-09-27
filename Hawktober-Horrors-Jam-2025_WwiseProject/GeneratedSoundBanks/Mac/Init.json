@@ -44,6 +44,20 @@
     ],
     "SwitchGroups": [
      {
+      "Id": "1017660616",
+      "Name": "Ambiences",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Ambiences",
+      "GUID": "{25A5BA37-980A-4D23-900B-265FDC9CCC90}",
+      "Switches": [
+       {
+        "Id": "1207173179",
+        "Name": "Ambience_Tower",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ambiences\\Ambience_Tower",
+        "GUID": "{E388D77A-C731-410F-A299-99F952E251BB}"
+       }
+      ]
+     },
+     {
       "Id": "2385628198",
       "Name": "Footsteps",
       "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps",
@@ -72,6 +86,6 @@
     ]
    }
   ],
-  "FileHash": "{D0CCEAF9-5D49-7778-C78E-1F87B865016D}"
+  "FileHash": "{8FB72F97-DBD3-4F67-ED04-8C2CD97649B6}"
  }
 }
