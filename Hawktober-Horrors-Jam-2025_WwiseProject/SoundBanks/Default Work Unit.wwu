@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{9E8D32AB-5B73-429E-84D1-ACDA9B6E8EF5}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Footsteps_Reverb" ID="{807F53E4-8D8E-4109-9746-A3F9DBC2559F}" WorkUnitID="{A2397790-DECC-4E90-9AEB-9A7A60EB244D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Footsteps" ID="{4C7B7210-CE1B-41C5-BFAA-4BBFECCCFB94}" WorkUnitID="{A2397790-DECC-4E90-9AEB-9A7A60EB244D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stingers" ID="{B3E179FB-814C-4529-A8C6-A4926832D5AA}" WorkUnitID="{A2397790-DECC-4E90-9AEB-9A7A60EB244D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ambiences" ID="{10214C14-4611-4975-9074-27A410545B7A}" WorkUnitID="{A2397790-DECC-4E90-9AEB-9A7A60EB244D}" Origin="Manual" Filter="7"/>

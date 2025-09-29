@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9E8D32AB-5B73-429E-84D1-ACDA9B6E8EF5}",
     "Language": "SFX",
-    "Hash": "{0D451774-C7AA-4E8D-9079-5F58441D5760}",
+    "Hash": "{02DB5A28-3A88-0F4A-F411-95F64040A77F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -131,10 +131,26 @@
     "Plugins": {
      "ShareSets": [
       {
-       "Id": "3191103210",
-       "Name": "New_Matrix_Reverb",
-       "ObjectPath": "\\Effects\\Default Work Unit\\New_Matrix_Reverb",
-       "GUID": "{AFC48E74-EE7F-412F-90E8-9EE7502AFB43}",
+       "Id": "702543456",
+       "Name": "Tunnel1",
+       "ObjectPath": "\\Effects\\Factory Effects\\Matrix Reverb\\Tunnel1",
+       "GUID": "{CC44B890-9865-4157-965F-86FED27BC4C6}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
+      },
+      {
+       "Id": "1551236760",
+       "Name": "Small_Wooden_Room1",
+       "ObjectPath": "\\Effects\\Factory Effects\\Matrix Reverb\\Small_Wooden_Room1",
+       "GUID": "{F7CBE859-36A8-4174-B553-AE32A7FE95FA}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
+      },
+      {
+       "Id": "2662085913",
+       "Name": "Large_Church1",
+       "ObjectPath": "\\Effects\\Factory Effects\\Matrix Reverb\\Large_Church1",
+       "GUID": "{9B6E8B78-EF8C-494C-AADA-D01CF51B5FAC}",
        "LibName": "Wwise Matrix Reverb",
        "LibId": "7536643"
       }
@@ -232,6 +248,105 @@
       ]
      },
      {
+      "Id": "3846719485",
+      "Name": "Footsteps_Reverb",
+      "ObjectPath": "\\Events\\Default Work Unit\\Footsteps_Reverb",
+      "GUID": "{807F53E4-8D8E-4109-9746-A3F9DBC2559F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12299534",
+      "DurationMax": "0.6326505",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "2058049674",
+         "GUID": "{29E1D61A-50E7-4ED7-9A12-C1C6067BC96F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "28439434"
+         },
+         {
+          "Id": "131813213"
+         },
+         {
+          "Id": "500468877"
+         },
+         {
+          "Id": "1053814472"
+         }
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "1551236760"
+          }
+         ]
+        }
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "2195636714",
+         "GUID": "{3B13EC8D-E846-41EF-BD35-EE801E15F6E9}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "527292975"
+         },
+         {
+          "Id": "733004065"
+         },
+         {
+          "Id": "767114978"
+         },
+         {
+          "Id": "841793571"
+         }
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "702543456"
+          }
+         ]
+        }
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "1216965916",
+         "GUID": "{B70758DF-8744-4588-8733-C40AE60B7B56}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "21758511"
+         },
+         {
+          "Id": "719114209"
+         },
+         {
+          "Id": "990657601"
+         },
+         {
+          "Id": "1016522810"
+         }
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "2662085913"
+          }
+         ]
+        }
+       }
+      ]
+     },
+     {
       "Id": "2940432316",
       "Name": "Stingers",
       "ObjectPath": "\\Events\\Default Work Unit\\Stingers",
@@ -247,7 +362,7 @@
       "PluginRefs": {
        "ShareSets": [
         {
-         "Id": "3191103210"
+         "Id": "1551236760"
         }
        ]
       }
@@ -311,6 +426,6 @@
     ]
    }
   ],
-  "FileHash": "{7CE70A46-7622-F6FC-121F-01F2BE039461}"
+  "FileHash": "{2255C25D-B262-70D7-5D7C-179246F87D94}"
  }
 }

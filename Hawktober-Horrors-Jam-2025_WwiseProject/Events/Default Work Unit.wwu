@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Footsteps_Reverb" ID="{807F53E4-8D8E-4109-9746-A3F9DBC2559F}">
+					<ChildrenList>
+						<Action Name="" ID="{DC676981-68FC-47A5-A705-F9D8B639D2AE}" ShortID="52299235">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps_Reverb" ID="{DC9F7B7F-AE05-4F66-B40E-CBC048D5BE13}" WorkUnitID="{C0E96738-29D7-4D7E-BDF5-4E1D737FF02A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

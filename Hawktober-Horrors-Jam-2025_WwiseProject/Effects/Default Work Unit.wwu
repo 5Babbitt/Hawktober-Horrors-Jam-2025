@@ -5,9 +5,11 @@
 			<ChildrenList>
 				<Effect Name="New_Matrix_Reverb" ID="{AFC48E74-EE7F-412F-90E8-9EE7502AFB43}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
 					<PropertyList>
-						<Property Name="NumberOfDelays" Type="int32" Value="12"/>
-						<Property Name="ReverbTime" Type="Real32" Value="0.8"/>
-						<Property Name="WetLevel" Type="Real32" Value="-24"/>
+						<Property Name="DryLevel" Type="Real32" Value="-10.3"/>
+						<Property Name="HFRatio" Type="Real32" Value="0.5"/>
+						<Property Name="NumberOfDelays" Type="int32" Value="16"/>
+						<Property Name="ReverbTime" Type="Real32" Value="0.3"/>
+						<Property Name="WetLevel" Type="Real32" Value="0"/>
 					</PropertyList>
 				</Effect>
 			</ChildrenList>
