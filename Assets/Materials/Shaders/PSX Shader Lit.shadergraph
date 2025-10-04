@@ -1059,12 +1059,6 @@
         },
         {
             "m_Id": "012f08319d094b5a9f00925e39386b76"
-        },
-        {
-            "m_Id": "90369a1d6f14458a889552e44d2ce3ad"
-        },
-        {
-            "m_Id": "a4df550a78a34aa1b8d625adfb25b605"
         }
     ],
     "synonyms": [],
@@ -1171,8 +1165,8 @@
     "m_ObjectId": "5183c89a8947422693d8e92ee4374c55",
     "m_Title": "PSX Vertex Snapping",
     "m_Position": {
-        "x": -847.0,
-        "y": -295.0
+        "x": -846.9999389648438,
+        "y": -295.0000305175781
     }
 }
 
@@ -1639,29 +1633,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "90369a1d6f14458a889552e44d2ce3ad",
-    "m_Id": 3,
-    "m_DisplayName": "Normal",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Normal",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
     "m_ObjectId": "9811c76005734783874280516c4e9e91",
     "m_Guid": {
@@ -1854,29 +1825,6 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "a4df550a78a34aa1b8d625adfb25b605",
-    "m_Id": 4,
-    "m_DisplayName": "Tangent",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Tangent",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
     "m_Labels": []
 }
 
