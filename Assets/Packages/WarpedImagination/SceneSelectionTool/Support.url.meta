@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ee4d036f0e7e85648b70c82f18db21c0
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 244501
+  packageName: Scene Selection Tool
+  packageVersion: 1.0.0
+  assetPath: Assets/WarpedImagination/SceneSelectionTool/Support.url
+  uploadId: 556513

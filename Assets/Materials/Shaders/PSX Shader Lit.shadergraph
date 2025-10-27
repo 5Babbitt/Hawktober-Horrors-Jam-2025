@@ -29,9 +29,6 @@
         },
         {
             "m_Id": "eb914d91b54f4d0c82f7977719a84400"
-        },
-        {
-            "m_Id": "537bd7a94d86426ab94ea2bd1e2af545"
         }
     ],
     "m_Keywords": [],
@@ -480,9 +477,6 @@
     "m_ChildObjectList": [
         {
             "m_Id": "73000ef2b6ce4c69953b3837e339af51"
-        },
-        {
-            "m_Id": "537bd7a94d86426ab94ea2bd1e2af545"
         },
         {
             "m_Id": "25c05c9ca1c04d9486387d8cd766f7cf"
@@ -1093,7 +1087,7 @@
     "m_ObjectId": "5183c89a8947422693d8e92ee4374c55",
     "m_Title": "PSX Vertex Snapping",
     "m_Position": {
-        "x": -847.0,
+        "x": -846.9998779296875,
         "y": -295.0
     }
 }
@@ -1128,46 +1122,6 @@
     },
     "isMainColor": false,
     "m_ColorMode": 0
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "537bd7a94d86426ab94ea2bd1e2af545",
-    "m_Guid": {
-        "m_GuidSerialized": "a7edd39a-e3c4-4861-980b-95e95d1181df"
-    },
-    "m_Name": "Texture Resolution",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Texture Resolution",
-    "m_DefaultReferenceName": "_Texture_Resolution",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": 256.0,
-    "m_FloatType": 1,
-    "m_RangeValues": {
-        "x": 8.0,
-        "y": 2048.0
-    },
-    "m_SliderType": 0,
-    "m_SliderPower": 3.0,
-    "m_EnumType": 0,
-    "m_CSharpEnumString": "",
-    "m_EnumNames": [
-        "Default"
-    ],
-    "m_EnumValues": [
-        0
-    ]
 }
 
 {
