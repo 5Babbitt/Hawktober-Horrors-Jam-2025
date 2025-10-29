@@ -67,19 +67,19 @@ namespace _Scripts.Utils
         /// <param name="input"></param>
         /// <param name="axes"></param>
         /// <returns>A Vector inverted along the desired axes</returns>
-        public static Vector3 InvertVector(Vector3 input, AxisToInvert axes)
+        public static Vector3 InvertVector(Vector3 input, Axis axes)
         {
             var invertVector = Vector3.one;
 
-            if (axes.HasFlag(AxisToInvert.X))
+            if (axes.HasFlag(Axis.X))
             {
                 invertVector.x = -1;
             }
-            if (axes.HasFlag(AxisToInvert.Y))
+            if (axes.HasFlag(Axis.Y))
             {
                 invertVector.y = -1;
             }
-            if (axes.HasFlag(AxisToInvert.Z))
+            if (axes.HasFlag(Axis.Z))
             {
                 invertVector.z = -1;
             }
@@ -96,15 +96,15 @@ namespace _Scripts.Utils
         /// <param name="input"></param>
         /// <param name="axes"></param>
         /// <returns>A Vector inverted along the desired axes</returns>
-        public static Vector2 InvertVector(Vector2 input, AxisToInvert axes)
+        public static Vector2 InvertVector(Vector2 input, Axis axes)
         {
             var invertVector = Vector2.one;
 
-            if (axes.HasFlag(AxisToInvert.X))
+            if (axes.HasFlag(Axis.X))
             {
                 invertVector.x = -1;
             }
-            if (axes.HasFlag(AxisToInvert.Y))
+            if (axes.HasFlag(Axis.Y))
             {
                 invertVector.y = -1;
             }
@@ -169,7 +169,7 @@ namespace _Scripts.Utils
     }
 
     [System.Flags]
-    public enum AxisToInvert
+    public enum Axis
     { 
         X = 0,
         Y = 1,
