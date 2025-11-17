@@ -328,16 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced644208a3d4f978e7c2d7034b792b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.Player.PlayerAudioInteractor
-  ambience:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4092d3e6730c98c499454f13283faad1, type: 2}
-  ambienceSwitch:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e0db5cc9b8e80f24a9934b4c80a92088, type: 2}
   groundLayers:
     serializedVersion: 2
     m_Bits: 128
