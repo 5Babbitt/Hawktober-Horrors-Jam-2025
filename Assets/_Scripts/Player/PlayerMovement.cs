@@ -21,14 +21,6 @@ namespace _Scripts.Player
         [SerializeField] private Vector2Variable lookDelta;
         [SerializeField] private BoolVariable playerCrouched;
 
-        [Header("Test Movement Settings")]
-        [SerializeField] private bool enableTestMovement;
-        [SerializeField] private Transform[] testWaypoints;
-        [SerializeField] private float waypointReachedDistance = 0.5f;
-        private int currentWaypointIndex = 0;
-        private float testStartTime;
-        private bool isTestMovementActive;
-
         [Header("Sound Settings")] 
         [SerializeField] private float timeBetweenFootsteps;
         [SerializeField] private AK.Wwise.Event footstep;
@@ -82,11 +74,6 @@ namespace _Scripts.Player
 
         private void Update()
         {
-            if (enableTestMovement)
-            {
-                HandleTestMovement();
-            }
-            
             HandleMovement();
             HandleGravity();
             
@@ -97,7 +84,6 @@ namespace _Scripts.Player
         private void HandleRotation()
         {
             if (!cam) return;
-            if (enableTestMovement) return; 
 
             Vector3 camForward = cam.transform.forward;
             camForward.y = 0;
@@ -156,8 +142,6 @@ namespace _Scripts.Player
 
         private void OnMove(InputAction.CallbackContext context)
         {
-            if (enableTestMovement) return; // Ignore manual input during test
-            
             moveInput = context.ReadValue<Vector2>();
             isMoving = context.performed || context.started;
         }
@@ -184,87 +168,6 @@ namespace _Scripts.Player
         {
             HandleRotation();
             lookDelta.Value = context.ReadValue<Vector2>();
-        }
-        
-        
-
-        [ContextMenu("Start Test Movement")]
-        public void StartTestMovement()
-        {
-            if (testWaypoints == null || testWaypoints.Length == 0)
-            {
-                Debug.LogWarning("No test waypoints assigned!");
-                return;
-            }
-            
-            enableTestMovement = true;
-            currentWaypointIndex = 0;
-            isTestMovementActive = false;
-        }
-
-        [ContextMenu("Stop Test Movement")]
-        public void StopTestMovement()
-        {
-            enableTestMovement = false;
-            isTestMovementActive = false;
-            isMoving = false;
-            moveInput = Vector2.zero;
-            currentWaypointIndex = 0;
-            Debug.Log("Test movement stopped");
-        }
-        
-        private void HandleTestMovement()
-        {
-            if (testWaypoints == null || testWaypoints.Length == 0) return;
-            
-            if (!isTestMovementActive)
-            {
-                isTestMovementActive = true;
-                testStartTime = Time.time;
-                Debug.Log($"Test movement started at {TimerUtils.FloatToTime(testStartTime)}");
-            }
-
-            Transform targetWaypoint = testWaypoints[currentWaypointIndex];
-            Vector3 targetPos = targetWaypoint.position;
-            targetPos.y = transform.position.y; // Keep on same height plane
-            
-            Vector3 directionToWaypoint = (targetPos - transform.position).normalized;
-            
-            // Rotate to face the waypoint
-            if (directionToWaypoint != Vector3.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToWaypoint);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-            }
-            
-            // Set movement input to move toward waypoint
-            Vector3 localDirection = transform.InverseTransformDirection(directionToWaypoint);
-            moveInput = new Vector2(localDirection.x, localDirection.z);
-            isMoving = true;
-            
-            // Check if reached waypoint
-            float distanceToWaypoint = Vector3.Distance(transform.position, targetPos);
-            if (distanceToWaypoint <= waypointReachedDistance)
-            {
-                currentWaypointIndex++;
-                
-                if (currentWaypointIndex >= testWaypoints.Length)
-                {
-                    // Completed all waypoints
-                    float totalTime = Time.time - testStartTime;
-                    Debug.Log($"Test movement completed! Total time: {TimerUtils.FloatToTime(totalTime)} ({totalTime:F2} seconds)");
-                    enableTestMovement = false;
-                    isTestMovementActive = false;
-                    isMoving = false;
-                    moveInput = Vector2.zero;
-                    currentWaypointIndex = 0;
-                }
-                else
-                {
-                    float elapsedTime = Time.time - testStartTime;
-                    Debug.Log($"Reached waypoint {currentWaypointIndex} at {TimerUtils.FloatToTime(elapsedTime)} ({elapsedTime:F2} seconds)");
-                }
-            }
         }
     }
 }
