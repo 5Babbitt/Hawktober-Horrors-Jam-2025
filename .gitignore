@@ -133,3 +133,10 @@ Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 ## --------------- ##
 
 *.bat
+
+# In ArtSource
+*.blend1        # Blender backups
+*.max.bak       # 3DS Max backups
+*.psd~          # Photoshop temp files
+Thumbs.db
+.DS_Store
