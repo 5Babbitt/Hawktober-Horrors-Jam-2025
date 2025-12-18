@@ -451,7 +451,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -466,7 +467,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -693,6 +695,9 @@
     "m_Guid": {
         "m_GuidSerialized": "0fedf07d-3630-4d9b-9366-5ef8eb5bc78b"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Roughness Map",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Roughness Map",
@@ -731,7 +736,8 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -741,6 +747,9 @@
     "m_Guid": {
         "m_GuidSerialized": "0393a04b-c750-4cff-91c3-ec8865972113"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Metallic",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Metallic",
@@ -758,6 +767,7 @@
     "m_customAttributes": [],
     "m_Value": 0.0,
     "m_FloatType": 1,
+    "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -987,7 +997,7 @@
     "m_Group": {
         "m_Id": "5183c89a8947422693d8e92ee4374c55"
     },
-    "m_Name": "VertexShaderSubgraph",
+    "m_Name": "Vertex Shader Subgraph",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -1085,8 +1095,8 @@
     "m_ObjectId": "5183c89a8947422693d8e92ee4374c55",
     "m_Title": "PSX Vertex Snapping",
     "m_Position": {
-        "x": -905.0000610351563,
-        "y": -295.0000305175781
+        "x": -905.0001831054688,
+        "y": -295.0
     }
 }
 
@@ -1097,6 +1107,9 @@
     "m_Guid": {
         "m_GuidSerialized": "ff7817bd-1035-4326-aa80-9b62ca1aced1"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Emmissive Colour",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Emmissive Colour",
@@ -1163,7 +1176,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "PSXsurfaceInputs",
+    "m_Name": "PS Xsurface Inputs",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -1264,7 +1277,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1292,7 +1306,8 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1395,6 +1410,9 @@
     "m_Guid": {
         "m_GuidSerialized": "da530a37-0d8d-40b0-8cad-1bcede167b57"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Vertex Resolution",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Vertex Resolution",
@@ -1412,6 +1430,7 @@
     "m_customAttributes": [],
     "m_Value": 256.0,
     "m_FloatType": 1,
+    "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 2.0,
         "y": 512.0
@@ -1518,6 +1537,9 @@
     "m_Guid": {
         "m_GuidSerialized": "dcc7bb36-81cf-4a78-9667-ca287e75fe99"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Height Map",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Height Map",
@@ -1556,7 +1578,8 @@
     "m_StageCapability": 2,
     "m_Value": 1.0,
     "m_DefaultValue": 1.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1636,6 +1659,9 @@
     "m_Guid": {
         "m_GuidSerialized": "be552abc-29ff-40f7-87a2-a29a66fc5460"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Base Colour",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Base Colour",
@@ -1720,7 +1746,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1753,7 +1780,8 @@
     "m_StageCapability": 2,
     "m_Value": 0.5,
     "m_DefaultValue": 0.5,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1838,7 +1866,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1848,6 +1877,9 @@
     "m_Guid": {
         "m_GuidSerialized": "6ae95d59-487c-4b7d-ba4f-1a35012d0fa2"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Normal Map",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Normal Map",
@@ -1886,7 +1918,8 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1937,7 +1970,8 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -1981,6 +2015,7 @@
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
     "m_DisableTint": false,
+    "m_Sort3DAs2DCompatible": false,
     "m_AdditionalMotionVectorMode": 0,
     "m_AlembicMotionVectors": false,
     "m_SupportsLODCrossFade": false,
@@ -1995,6 +2030,9 @@
     "m_Guid": {
         "m_GuidSerialized": "972bf5f7-4b0f-4d18-9447-96922eebe0aa"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Base Map",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Base Map",
@@ -2085,6 +2123,9 @@
     "m_Guid": {
         "m_GuidSerialized": "16eec2b2-20f4-46bf-abf0-362ff64e5a5d"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Smoothness",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Smoothness",
@@ -2102,6 +2143,7 @@
     "m_customAttributes": [],
     "m_Value": 0.5,
     "m_FloatType": 1,
+    "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
