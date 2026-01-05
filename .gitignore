@@ -136,3 +136,4 @@ Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 *.psd~          # Photoshop temp files
 Thumbs.db
 .DS_Store
+.vscode/
