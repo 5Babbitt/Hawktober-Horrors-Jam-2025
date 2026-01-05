@@ -10773,6 +10773,7 @@ GameObject:
   - component: {fileID: 1121407259}
   - component: {fileID: 1121407258}
   - component: {fileID: 1121407257}
+  - component: {fileID: 1121407260}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -10898,6 +10899,35 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1121407260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121407254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd9a980c45168348bfcdf087b2e24f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkEvent
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 39e8d89418146d9458486f902e8e2d73, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!43 &1309348674
 Mesh:
   m_ObjectHideFlags: 0
@@ -14154,6 +14184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0b63a69d9f586546b1a53207eaf254b, type: 3}
+      propertyPath: m_Name
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: -7476171619197276972, guid: b2549867ac494a64cae0a3d0efc7ac33, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -14170,10 +14204,6 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d08163ac89b4e6d40b5d58ce6a26a00e, type: 2}
-    - target: {fileID: 919132149155446097, guid: b0b63a69d9f586546b1a53207eaf254b, type: 3}
-      propertyPath: m_Name
-      value: Tower
-      objectReference: {fileID: 0}
     - target: {fileID: 1403336833698882656, guid: b2549867ac494a64cae0a3d0efc7ac33, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

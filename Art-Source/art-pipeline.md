@@ -244,6 +244,8 @@ When exporting to FBX, use these settings:
 - ✅ Check **Embed Textures** (if you want textures packed with model)
 - Note: We typically export textures separately, so you can uncheck this
 
+<img width="719" height="719" alt="image" src="https://github.com/user-attachments/assets/724ce4cf-60c8-45c6-ad25-c4e84e12eff7" />
+
 ### Creating an Export Preset
 
 Save time by creating a preset with these settings:
